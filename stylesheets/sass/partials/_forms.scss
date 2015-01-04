@@ -1,0 +1,46 @@
+/* =============================================================================
+   Forms
+   ========================================================================== */
+   
+   
+input, textarea, button { background: #fafafa; }
+input:focus, textarea:focus, button:hover { background: #fff; }
+/* Fix inputs and buttons in IE, WebKit, Firefox */
+button, input, select, textarea { width: auto; overflow: visible; margin: 0; font-size: 100%; font-family: sans-serif; vertical-align: baseline; }
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+/* Remove extra padding and inner border in Firefox */
+input::-moz-focus-inner, button::-moz-focus-inner { border: 0; padding: 0; }
+/*Consistent box sizing and appearance */
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/* -----------------------------[ Inputs ]----------------------------- */
+input[type="text"], input[type="password"], input[type="email"], textarea, select { border: 1px solid #ccc; padding: 6px 4px; outline: none; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; }
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus { border: 1px solid #aaa; color: #444;  }
+
+/* -----------------------------[ Buttons ]----------------------------- */
+a.button, button, input[type="submit"], input[type="reset"], input[type="button"],
+a.button:visited, button:visited, input[type="submit"]:visited, input[type="reset"]:visited, input[type="button"]:visited {
+	
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	padding: 5px;
+	display: inline-block;
+	text-transform: uppercase;
+	outline: none;
+	position: relative;
+	border-radius: 2px;
+	
+	background: $button-color;
+
+
+}
+
+a.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover,
+a.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active,
+a.button:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus { 
+	background: $button-roll;
+	text-decoration:none
+}

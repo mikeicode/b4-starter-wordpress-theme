@@ -1,0 +1,58 @@
+/* -----------------------------[ Basic Alignments ]----------------------------- */
+.aligncenter { display:block; margin:0 auto }
+.alignleft { float:left }
+.alignright { float:right }
+.wp-caption { border:1px solid #666; text-align:center; background:#ccc; padding:10px; margin:10px }
+/* clearfix */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+.clear { clear:both }
+
+/* -----------------------------[ Images ]----------------------------- */
+img { max-width:100%; height:auto }
+img.alignleft { float: left; margin-right: 20px; margin-top: 5px; }
+img.alignright { display: block; float: right; margin-left: 20px; margin-top: 5px; }
+img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: both; margin-top: 5px; }
+.align-center { text-align:center }
+
+
+.wp-caption { text-align: center; }
+.wp-caption img { margin: 0; padding: 0; border: 0 none; }
+.wp-caption .wp-caption-text { margin: 0; padding: 5px; }
+
+.wp-smiley { max-height: 13px; margin: 0 !important; } /* Prevent the smileys from breaking line-height */
+
+/* -----------------------------[ Margins, Padding ]----------------------------- */
+.mt0 { margin-top:0px !important }
+.mt10 { margin-top:10px !important }
+.mt15 { margin-top:15px !important }
+.mt20 { margin-top:20px !important }
+.mt25 { margin-top:25px !important }
+.mt30 { margin-top:30px !important }
+.mt35 { margin-top:35px !important }
+.mt40 { margin-top:40px !important }
+.mt45 { margin-top:45px !important }
+.mt50 { margin-top:50px !important }
+
+.mb0 { margin-bottom:0px !important }
+.mb10 { margin-bottom:10px !important }
+.mb15 { margin-bottom:15px !important }
+.mb20 { margin-bottom:20px !important }
+.mb25 { margin-bottom:25px !important }
+.mb30 { margin-bottom:30px !important }
+.mb35 { margin-bottom:35px !important }
+
+.pt0 { padding-top:0px !important }
+.pt10 { padding-top:10px !important }
+.pt15 { padding-top:15px !important }
+.pt20 { padding-top:20px !important }
+.pt25 { padding-top:25px !important }
+.pt30 { padding-top:30px !important }
+.pt35 { padding-top:35px !important }
+.pb10 { padding-bottom:10px !important }
+.pb15 { padding-bottom:15px !important }
+.pb20 { padding-bottom:20px !important }
+.pb25 { padding-bottom:25px !important }
+.pb30 { padding-bottom:30px !important }
+.pb35 { padding-bottom:35px !important }

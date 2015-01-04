@@ -1,0 +1,103 @@
+/*** essential styles ***/
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu li {
+	position: relative;
+}
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+}
+.sf-menu > li {
+	float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+/*** skin ***/
+.sf-menu {
+	float: left;
+	margin-top:5px
+}
+
+.sf-menu ul {
+	min-width: 12em; 
+}
+.sf-menu a {
+	padding: .75em 1em;
+	text-decoration: none;
+	zoom: 1; 
+}
+.sf-menu a {
+	color: #fff;
+}
+.sf-menu li {
+	white-space: nowrap; 
+	*white-space: normal; 
+}
+
+/* nav links */
+
+.sf-menu li  {border-right:1px solid #83a4d3}
+.sf-menu li li, .sf-menu li li:last-child {border:none}
+
+.sf-menu li a, .sf-menu li a:visited {
+	font-size:17px;
+    padding:5px 15px;
+    text-decoration: none;  
+	font-weight:normal;
+	color:#656565;
+}
+
+.sf-menu li a:hover {
+	color: $main-red;
+}
+
+/* nav drop menu */
+
+.sf-menu li ul {
+	background:#4472b6
+}
+
+
+
+
+
+
+
+
+/* #Mobile Menu
+================================================== */
+optgroup, optgroup label { font-weight:normal !important; font-style:normal !important;  }
+
+
+/* styles for desktop */
+.tinynav { display: none }
+#tinynav1 { position:relative; top:9px; margin-top:0px }
+
+/* styles for mobile */
+@media screen and (max-width: 767px) {
+    .tinynav { display: block }
+    #menu-main-nav{ display: none }
+}
+
+#menu-mobile-nav {display:none }
+
+

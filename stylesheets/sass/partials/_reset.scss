@@ -1,0 +1,60 @@
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+
+/* =============================================================================
+   HTML5 reset styles
+   ========================================================================== */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,del, dfn, em, img, 
+ins, kbd, q, samp,small, strong, sub, sup, var,
+b, i,dl, dt, dd, ol, ul, li, fieldset, form, label, 
+legend, table, caption, tbody, tfoot, thead, tr, th, 
+td, article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {margin:0;padding:0;border:0;
+outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body {line-height:1;}
+nav ul {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none;}
+a {margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;}
+ins {background-color:#ff9;color:#000;text-decoration:none;}
+mark {background-color: #ff9; color: #000; font-style: italic; font-weight: bold;}
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+table { border-collapse: collapse; border-spacing: 0; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+input, select {vertical-align:middle;}
+small { font-size: 85%; }
+b, strong, th { font-weight: bold; }
+img{display:block;}
+
+/* --------[Font normalization inspired by YUI Library's fonts.css]-------- */
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+/* --------[Normalize monospace sizing]-------- */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+/* --------[Fix sup and sub line-height]-------- */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }sup { top: -0.5em; }sub { bottom: -0.25em; }
+/* --------[Remove default scrollbar in IE, Align to text-top]-------- */
+textarea { overflow: auto; vertical-align:text-top; }
+/* --------[Fix IE image sizing]-------- */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+/* --------[Correct overflow not hidden in IE9]-------- */
+svg:not(:root) { overflow: hidden; }
+/* --------[Text selection color]-------- */
+::-moz-selection { background: $text-highlight-color; color:#fff; text-shadow: none; }
+::selection { background: $text-highlight-color; color:#fff; text-shadow: none; }
+/* --------[j.mp/webkit-tap-highlight-color]-------- */
+a:link { -webkit-tap-highlight-color: $text-highlight-color; }
+/* --------[Accessible focus treatment]-------- */
+a:hover, a:active { outline: none; }

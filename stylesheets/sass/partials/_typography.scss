@@ -1,0 +1,48 @@
+/* =============================================================================
+   Global
+   ========================================================================== */
+   
+html { overflow-y: scroll; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+body, input, textarea { font: 13px/1.5 $font-stack;  color: $main-grey; }
+
+/* =============================================================================
+   Main Elements
+   ========================================================================== */
+
+/* -----------------------------[ Vertical Styles ]----------------------------- */
+.entry-meta { margin-bottom: 10px; }
+p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .gallery-row, .comment-list ul, .comment-list ol { margin-bottom: 20px; }
+.hentry, .widget, .comment, .navigation-links { margin-bottom: 40px; }
+
+/* -----------------------------[ Lists ]----------------------------- */
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+
+/* -----------------------------[ Text Elements ]----------------------------- */
+address { font-style: italic; }
+abbr[title], acronym[title], dfn[title] { border-bottom: 1px solid #666; }
+
+/* -----------------------------[ Tables ]----------------------------- */
+table { border: 1px solid #ccc; border-width: 1px; line-height: 18px; margin: 0 0 22px 0; text-align: left; padding: 0 5px; }
+table .even { background: #ddd; }
+caption { text-align: left; }
+tr { border-bottom: 1px solid #ccc; }
+th, td { padding: 5px 3px; }
+td { vertical-align: top; }
+
+
+
+
+/* -----------------------------[ Links ]----------------------------- */
+a, a:active, a:visited { color: #607890; text-decoration: none; }
+a:hover { color: #036; text-decoration: underline; }
+
+/* -----------------------------[ Headings ]----------------------------- */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; clear: both; }
+h1 { font-size: 24px; line-height: 28px; padding: 5px 0px; }
+h2 { font-size: 20px; line-height: 22px; padding: 5px 0px; }
+h3 { font-size: 16px; line-height: 20px; padding: 5px 0px; }
+h4 { font-size: 14px; line-height: 18px; padding: 5px 0px; }
+h5 { font-size: 12px; line-height: 18px; padding: 5px 0px; }
+h6 { font-size: 10px; line-height: 16px; }
