@@ -2,7 +2,6 @@
 .aligncenter { display:block; margin:0 auto }
 .alignleft { float:left }
 .alignright { float:right }
-.wp-caption { border:1px solid #666; text-align:center; background:#ccc; padding:10px; margin:10px }
 /* clearfix */
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
@@ -16,8 +15,8 @@ img.alignright { display: block; float: right; margin-left: 20px; margin-top: 5p
 img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: both; margin-top: 5px; }
 .align-center { text-align:center }
 
+.wp-caption { border:1px solid #666; text-align:center; background:#ccc; padding:10px; margin:10px; text-align: center; }
 
-.wp-caption { text-align: center; }
 .wp-caption img { margin: 0; padding: 0; border: 0 none; }
 .wp-caption .wp-caption-text { margin: 0; padding: 5px; }
 
@@ -42,6 +41,9 @@ img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: 
 .mb25 { margin-bottom:25px !important }
 .mb30 { margin-bottom:30px !important }
 .mb35 { margin-bottom:35px !important }
+.mb40 { margin-bottom:40px !important }
+.mb45 { margin-bottom:45px !important }
+.mb50 { margin-bottom:50px !important }
 
 .pt0 { padding-top:0px !important }
 .pt10 { padding-top:10px !important }
@@ -50,9 +52,16 @@ img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: 
 .pt25 { padding-top:25px !important }
 .pt30 { padding-top:30px !important }
 .pt35 { padding-top:35px !important }
+.pt40 { padding-top:40px !important }
+.pt45 { padding-top:45px !important }
+.pt50 { padding-top:50px !important }
+
 .pb10 { padding-bottom:10px !important }
 .pb15 { padding-bottom:15px !important }
 .pb20 { padding-bottom:20px !important }
 .pb25 { padding-bottom:25px !important }
 .pb30 { padding-bottom:30px !important }
 .pb35 { padding-bottom:35px !important }
+.pb40 { padding-bottom:40px !important }
+.pb45 { padding-bottom:45px !important }
+.pb50 { padding-bottom:50px !important }
