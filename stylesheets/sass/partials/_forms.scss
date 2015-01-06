@@ -44,3 +44,7 @@ a.button:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:fo
 	background: $button-roll;
 	text-decoration:none
 }
+
+/* -----------------------------[ Gravity Forms ]----------------------------- */
+
+.gform_wrapper {display:block!important;} /* solve issue with conditional logic breaking form */
