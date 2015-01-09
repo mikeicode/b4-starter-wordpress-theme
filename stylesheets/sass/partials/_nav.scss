@@ -76,6 +76,36 @@
 	background:#4472b6
 }
 
+/* current links */
+
+.sf-menu li.current_page_item a {
+	color: #C4DAEF;
+}
+
+.sf-menu li.current_page_item li a {
+	color: #fff;
+}
+
+.sf-menu li.current_page_item li a:hover {
+	color: #C4DAEF;
+}
+
+.sf-menu li.current_page_item li a {
+	color: #fff;
+}
+
+.sf-menu li.current_page_parent a {
+	color: #C4DAEF;
+}
+
+.sf-menu li.current_page_parent li a {
+	color: #fff;
+}
+
+.sf-menu li.current_page_parent li a:hover {
+	color: #C4DAEF;
+}
+
 
 
 
