@@ -1,0 +1,33 @@
+/*-- fonts --*/
+
+$main-font: 'latoregular'; 
+
+$heading-font:  'montserratbold';
+
+$main-font-size: 17px;
+
+/*-- colors --*/
+
+$main-text-color: #444;
+
+$main-dark-blue: #3864ae;
+$main-light-blue: #00a7ec;
+$main-red: #c61a40;
+
+$main-grey: #333;
+$main-green: #A1C931;
+$main-blue: #2379C3;
+$main-yellow: #E9B932;
+
+/*-- links/buttons --*/
+
+$link-color: $main-blue;
+$link-roll: lighten($link-color, 10%);
+
+$button-color: #4d4d4d;
+$button-roll: lighten($button-color, 10%);
+$button-active: lighten($button-color, 15%);
+
+/*-- styling --*/
+
+$text-highlight-color: $main-grey;

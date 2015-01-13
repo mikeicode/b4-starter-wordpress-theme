@@ -3,7 +3,7 @@
    ========================================================================== */
    
 html { overflow-y: scroll; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
-body, input, textarea { font: 13px/1.5 $font-stack;  color: $main-grey; }
+body, input, textarea { font: 13px/1.5 $main-font;  color: $main-text-color; }
 
 /* =============================================================================
    Main Elements
@@ -32,14 +32,12 @@ th, td { padding: 5px 3px; }
 td { vertical-align: top; }
 
 
-
-
 /* -----------------------------[ Links ]----------------------------- */
 a, a:active, a:visited { color: #607890; text-decoration: none; }
 a:hover { color: #036; text-decoration: underline; }
 
 /* -----------------------------[ Headings ]----------------------------- */
-h1, h2, h3, h4, h5, h6 { font-weight: bold; clear: both; }
+h1, h2, h3, h4, h5, h6 { font-weight: regular; clear: $heading-font; }
 h1 { font-size: 24px; line-height: 28px; padding: 5px 0px; }
 h2 { font-size: 20px; line-height: 22px; padding: 5px 0px; }
 h3 { font-size: 16px; line-height: 20px; padding: 5px 0px; }

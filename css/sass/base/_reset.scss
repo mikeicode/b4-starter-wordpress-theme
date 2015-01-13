@@ -36,7 +36,6 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin:
 input, select {vertical-align:middle;}
 small { font-size: 85%; }
 b, strong, th { font-weight: bold; }
-img{display:block;}
 
 /* --------[Font normalization inspired by YUI Library's fonts.css]-------- */
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -58,3 +57,44 @@ svg:not(:root) { overflow: hidden; }
 a:link { -webkit-tap-highlight-color: $text-highlight-color; }
 /* --------[Accessible focus treatment]-------- */
 a:hover, a:active { outline: none; }
+
+
+/* -----------------------------[ Text Elements ]----------------------------- */
+address { font-style: italic; }
+abbr[title], acronym[title], dfn[title] { border-bottom: 1px solid #666; }
+
+/* -----------------------------[ Tables ]----------------------------- */
+table { border: 1px solid #ccc; border-width: 1px; line-height: 18px; margin: 0 0 22px 0; text-align: left; padding: 0 5px; }
+table .even { background: #ddd; }
+caption { text-align: left; }
+tr { border-bottom: 1px solid #ccc; }
+th, td { padding: 5px 3px; }
+td { vertical-align: top; }
+
+/* -----------------------------[ Images ]----------------------------- */
+img { max-width:100%; height:auto }
+img.alignleft { float: left; margin-right: 20px; margin-top: 5px; }
+img.alignright { display: block; float: right; margin-left: 20px; margin-top: 5px; }
+img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: both; margin-top: 5px; }
+.align-center { text-align:center }
+
+
+.wp-caption { text-align: center; }
+.wp-caption img { margin: 0; padding: 0; border: 0 none; }
+.wp-caption .wp-caption-text { margin: 0; padding: 5px; }
+
+.wp-smiley { max-height: 13px; margin: 0 !important; } /* Prevent the smileys from breaking line-height */
+
+/* -----------------------------[ Global ]----------------------------- */
+html { overflow-y: scroll; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+
+/* -----------------------------[ Basic Alignments ]----------------------------- */
+.aligncenter { display:block; margin:0 auto }
+.alignleft { float:left }
+.alignright { float:right }
+/* clearfix */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+.clear { clear:both }
+

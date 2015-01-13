@@ -1,29 +1,5 @@
-/* -----------------------------[ Basic Alignments ]----------------------------- */
-.aligncenter { display:block; margin:0 auto }
-.alignleft { float:left }
-.alignright { float:right }
-/* clearfix */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
-.clear { clear:both }
-
-/* -----------------------------[ Images ]----------------------------- */
-img { max-width:100%; height:auto }
-img.alignleft { float: left; margin-right: 20px; margin-top: 5px; }
-img.alignright { display: block; float: right; margin-left: 20px; margin-top: 5px; }
-img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: both; margin-top: 5px; }
-.align-center { text-align:center }
-
-.wp-caption { border:1px solid #666; text-align:center; background:#ccc; padding:10px; margin:10px; text-align: center; }
-
-.wp-caption img { margin: 0; padding: 0; border: 0 none; }
-.wp-caption .wp-caption-text { margin: 0; padding: 5px; }
-
-.wp-smiley { max-height: 13px; margin: 0 !important; } /* Prevent the smileys from breaking line-height */
-
-/* -----------------------------[ Margins, Padding ]----------------------------- */
 .mt0 { margin-top:0px !important }
+.mt5 { margin-top:5px !important }
 .mt10 { margin-top:10px !important }
 .mt15 { margin-top:15px !important }
 .mt20 { margin-top:20px !important }
@@ -35,6 +11,7 @@ img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: 
 .mt50 { margin-top:50px !important }
 
 .mb0 { margin-bottom:0px !important }
+.mb5 { margin-bottom:5px !important }
 .mb10 { margin-bottom:10px !important }
 .mb15 { margin-bottom:15px !important }
 .mb20 { margin-bottom:20px !important }
@@ -46,6 +23,7 @@ img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: 
 .mb50 { margin-bottom:50px !important }
 
 .pt0 { padding-top:0px !important }
+.pt5 { padding-top:5px !important }
 .pt10 { padding-top:10px !important }
 .pt15 { padding-top:15px !important }
 .pt20 { padding-top:20px !important }
@@ -56,6 +34,8 @@ img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: 
 .pt45 { padding-top:45px !important }
 .pt50 { padding-top:50px !important }
 
+.pb0 { padding-bottom:0px !important }
+.pb5 { padding-bottom:5px !important }
 .pb10 { padding-bottom:10px !important }
 .pb15 { padding-bottom:15px !important }
 .pb20 { padding-bottom:20px !important }

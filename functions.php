@@ -27,11 +27,11 @@ function skeleton_styles()
 	
 		// Register styles
 		wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
-		wp_register_style( 'base', get_template_directory_uri() . '/stylesheets/css/base.css', array(), '1.0', 'all' );
+		wp_register_style( 'output', get_template_directory_uri() . '/stylesheets/css/output.css', array(), '1.0', 'all' );
 
 		// Enqueue styles 
 		wp_enqueue_style( 'style' );
-		wp_enqueue_style( 'base' );
+		wp_enqueue_style( 'output' );
 	
 	}
 add_action( 'wp_enqueue_scripts', 'skeleton_styles' );
