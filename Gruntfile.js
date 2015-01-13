@@ -2,7 +2,7 @@
 
 module.exports = function(grunt) {
 
-    // All configuration goes here 
+    // 1. All configuration goes here 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 		uglify: {
 			build: {
 				src: 'js/build/production.js',
-				dest: 'js/build/production.min.js'
+				dest: 'js/build/production.min.js',
 			}
 		},
 		
@@ -34,56 +34,64 @@ module.exports = function(grunt) {
 			}
 		},
 		
-		compass: {                 
-			dist: {                 
-		  		options: {             
-					sassDir: 'stylesheets/sass',
-					cssDir: 'stylesheets/css',
-					outputStyle: 'compressed'
-		 		 	}
-			}
+		sass: {
+			dist: {
+				options: {
+					style: 'compressed'
+				},
+				files: {
+					'css/output.css': 'css/main.scss'
+				}
+			} 
 		},
 		
-
-
+		autoprefixer: {
+		  options: {
+				browsers: ['last 2 versions']
+		  },
+				single_file: {
+			options: {
+			  // Target-specific options go here.
+			},
+			src: 'css/output.css',
+			dest: 'css/output.css'
+		  },
+		},
+	
 		
 		watch: {
     		css: {
-   			 	files: ['stylesheets/sass/partials/*.scss'],
-    			tasks: ['compass'],
+   			 	files: ['css/sass/**/*.scss'], 
+    			tasks: ['sass','autoprefixer'], 
     			options: {
         			spawn: false,
-    					}
-				}
+    			}
 			},
 			
 			scripts: {
-        		files: ['css/libs/*.js'],
+        		files: ['js/libs/*.js'],
         		tasks: ['concat', 'uglify'],
         		options: {
             		spawn: false,
-        				}
-				},
-    		 
+        		}
+    		}, 
 		
-		
+		}
 		
 
     });
 
-    // Tell Grunt we plan to use this plug-in.
+    // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-concat'); // put js into one file
 	grunt.loadNpmTasks('grunt-contrib-uglify'); // minify that one js file
 	grunt.loadNpmTasks('grunt-contrib-imagemin'); // optimize images
-	grunt.loadNpmTasks('grunt-contrib-compass'); // compass sass
-	
 	grunt.loadNpmTasks('grunt-contrib-watch'); // watch for changes
+	grunt.loadNpmTasks('grunt-contrib-sass'); // sass (SCSS)
+	grunt.loadNpmTasks('grunt-autoprefixer'); //autoprefixer
 	
 	
-	
-	
-    // Tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'compass']);
+    // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
+    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sass', 'autoprefixer']);
 	
 
 };
