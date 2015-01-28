@@ -12,12 +12,14 @@ function skeleton_scripts()
     {  
          
         // Register scripts
-        wp_register_script( 'custom', get_template_directory_uri() . '/js/app.js', array( 'jquery'), '1.0', true); 
 		wp_register_script( 'scripts', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery'), '1.0', true);
+        wp_register_script( 'main', get_template_directory_uri() . '/js/ main.js', array( 'jquery'), '1.0', true); 
+		
 		
         // Enqueue scripts 
-        wp_enqueue_script( 'custom' );  
 		wp_enqueue_script( 'scripts' );
+        wp_enqueue_script( 'main' );  
+		
 			
     }  
 add_action( 'wp_enqueue_scripts', 'skeleton_scripts' );  
@@ -187,7 +189,7 @@ function Wps_unregister_default_widgets() {
     unregister_widget('WP_Widget_Links');
     unregister_widget('WP_Widget_Meta');
     unregister_widget('WP_Widget_Search');
-    //unregister_widget('WP_Widget_Text');
+    unregister_widget('WP_Widget_Text');
     unregister_widget('WP_Widget_Categories');
     unregister_widget('WP_Widget_Recent_Posts');
     unregister_widget('WP_Widget_Recent_Comments');
@@ -205,10 +207,10 @@ function remove_menus()
 {
 global $submenu;
 
-remove_menu_page( 'edit.php' ); // Posts
+//remove_menu_page( 'edit.php' ); // Posts
 //remove_menu_page( 'upload.php' ); // Media
 remove_menu_page( 'link-manager.php' ); // Links
-remove_menu_page( 'edit-comments.php' ); // Comments
+//remove_menu_page( 'edit-comments.php' ); // Comments
 //remove_menu_page( 'edit.php?post_type=page' ); // Pages
 //remove_menu_page( 'plugins.php' ); // Plugins
 //remove_menu_page( 'themes.php' ); // Appearance
