@@ -1,47 +1,100 @@
-
 jQuery(document).ready(function($) {
 
-		/* Superfish
-================================================== */
+
+/*
+|--------------------------------------------------------------------------
+| Global myTheme Obj / Variable Declaration
+|--------------------------------------------------------------------------
+|
+|
+|
+*/
+
+	var myTheme = window.myTheme || {},
+    $win = $( window );
+		
 	
-	var mainNav = $('#menu-main-nav').superfish({
-		//add options here if required
-	});
+/*
+|--------------------------------------------------------------------------
+| Superfish
+|--------------------------------------------------------------------------
+|
+|
+|
+*/	
+
+	myTheme.Navigation = function () {
+		
+		$('#menu-main-nav').superfish({
+		});
 	
-	
-	/* Input placeholder text
-================================================== */	
-	jQuery("#s").watermark("Search..");
-	
-	
-	/* Mobile Nav
-================================================== */
-	jQuery("#menu-mobile-nav").tinyNav({
-  	
-  	header: 'Navigation' // String: Specify text for "header" 
-	});
+	};
 	
 
-	/* Fancybox Video
-================================================== */
+/*
+|--------------------------------------------------------------------------
+| Search field placeholder text
+|--------------------------------------------------------------------------
+|
+|
+|
+*/		
 
-  jQuery(".various").fancybox({
-		  maxWidth	: 900,
-		  maxHeight	: 700,
-		  fitToView	: false,
-		  width		: '80%',
-		  height		: '80%',
-		  autoSize	: false,
-		  closeClick	: false,
-		  openEffect	: 'elastic',
-		  closeEffect	: 'none'
-  });
+	myTheme.SearchPlaceholder = function () {
+		
+		$("#s").watermark("Search..");
+	
+	};	
+	
 
-	/* Fitvids Responsive Videos
-================================================== */
+/*
+|--------------------------------------------------------------------------
+| Mobile Nav
+|--------------------------------------------------------------------------
+|
+|
+|
+*/	
 
-  jQuery(".container").fitVids();
+	myTheme.MobileNav = function () {
+		
+		$("#menu-mobile-nav").tinyNav({
+  			header: 'Navigation' 
+		});
+	
+	};		
+	
+	
+/*
+|--------------------------------------------------------------------------
+| Fitvids Responsive Videos
+|--------------------------------------------------------------------------
+|
+|
+|
+*/		
 
+	myTheme.FitVids = function () {
+		
+		$(".container").fitVids();
+	
+	};		
+	
 
+/*
+|--------------------------------------------------------------------------
+| Functions Initializers
+|--------------------------------------------------------------------------
+|
+|
+|
+*/
+
+	myTheme.Navigation();
+	myTheme.SearchPlaceholder();
+	myTheme.MobileNav();
+	myTheme.FitVids();
+	
+	
 
 });
