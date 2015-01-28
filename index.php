@@ -6,7 +6,7 @@
  	get_header();  
 ?>     
 
-	<?php get_template_part( 'menu', 'index' ); //the  menu + logo/site title ?>      
+	<?php get_template_part( 'menu', 'index' ); ?>      
     
     <div class="container">
 
@@ -16,12 +16,22 @@
         <!-- left column -->   	
         <div class="col-xs-12 col-sm-9">
         
+        	<!-- echo category name on category archive, blog page title otherwise -->
+        	<p class="blog-title"><?php if ( is_category() ) {
+				single_cat_title( '', true );
+				} else {
+				echo get_the_title( 35 ); // change that to the ID of the main blog page
+				}
+			?> </p>
+        
 			<?php while ( have_posts() ) : the_post(); ?> <!--  the loop -->
                         
         	<article id="post-<?php the_ID(); ?>">
           		<div class="title">            
              		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title('<h3>', '</h3>'); ?></a>  <!--Post titles-->
           		</div>
+                
+             
              
             	<?php the_content("Continue reading " . the_title('', '', false)); ?> <!--The Content-->
 	 
