@@ -3,10 +3,10 @@
  * @package WordPress
  * 
  */
- 	get_header();  
+ 	get_header();
+	get_template_part( 'menu', 'index' );  
 ?>     
-
-	<?php get_template_part( 'menu', 'index' ); ?>      
+     
     
     <div class="container">
 

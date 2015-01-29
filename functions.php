@@ -24,7 +24,7 @@ function skeleton_scripts()
     }  
 add_action( 'wp_enqueue_scripts', 'skeleton_scripts' );  
 
-function skeleton_styles()
+function skeleton_styles()  
 	{
 	
 		// Register styles
