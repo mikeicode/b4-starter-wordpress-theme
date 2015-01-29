@@ -22,18 +22,7 @@ module.exports = function(grunt) {
 				dest: 'js/build/production.min.js',
 			}
 		},
-		
-		imagemin: {
-			dynamic: {
-				files: [{
-					expand: true,
-					cwd: 'images/',
-					src: ['**/*.{png,jpg,gif}'],
-					dest: 'images/build/'
-				}]
-			}
-		},
-		
+
 		sass: {
 			dist: {
 				options: {
@@ -84,14 +73,13 @@ module.exports = function(grunt) {
     // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-concat'); // put js into one file
 	grunt.loadNpmTasks('grunt-contrib-uglify'); // minify that one js file
-	grunt.loadNpmTasks('grunt-contrib-imagemin'); // optimize images
 	grunt.loadNpmTasks('grunt-contrib-watch'); // watch for changes
 	grunt.loadNpmTasks('grunt-contrib-sass'); // sass (SCSS)
 	grunt.loadNpmTasks('grunt-autoprefixer'); //autoprefixer
 	
 	
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sass', 'autoprefixer']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'autoprefixer']);
 	
 
 };
