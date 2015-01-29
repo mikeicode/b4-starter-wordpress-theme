@@ -1,11 +1,11 @@
 <?php
 /**
- * @WordPress page.php
+ * @package WordPress
  * 
  */
-    get_header(); ?>
-    
-    <?php get_template_part( 'menu', 'index' ); ?>
+ 	get_header();
+	get_template_part( 'menu', 'index' );  
+?>  
     
     <?php while ( have_posts() ) : the_post(); ?> <!--  the loop -->
     

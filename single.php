@@ -3,10 +3,9 @@
  * @package WordPress
  * 
  */
- 	get_header();  
-?>     
-
-	<?php get_template_part( 'menu', 'index' ); ?>      
+ 	get_header();
+	get_template_part( 'menu', 'index' );  
+?>      
     
     <div class="container">
 
