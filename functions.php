@@ -13,7 +13,7 @@ function skeleton_scripts()
          
         // Register scripts
 		wp_register_script( 'scripts', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery'), '1.0', true);
-        wp_register_script( 'main', get_template_directory_uri() . '/js/ main.js', array( 'jquery'), '1.0', true); 
+        wp_register_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery'), '1.0', true); 
 		
 		
         // Enqueue scripts 
@@ -29,7 +29,7 @@ function skeleton_styles()
 	
 		// Register styles
 		wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
-		wp_register_style( 'output', get_template_directory_uri() . '/stylesheets/css/output.css', array(), '1.0', 'all' );
+		wp_register_style( 'output', get_template_directory_uri() . '/css/output.css', array(), '1.0', 'all' );
 
 		// Enqueue styles 
 		wp_enqueue_style( 'style' );
@@ -71,6 +71,11 @@ function my_custom_menus() {
 
 add_filter('widget_text', 'do_shortcode');
 
+
+//-----------------------------------------------------------------------------// 
+//----------------[ Remove Generator for Security             ]----------------//
+//-----------------------------------------------------------------------------// 
+remove_action( 'wp_head', 'wp_generator' );
 
 //-----------------------------------------------------------------------------// 
 //----------------[ Change wordpress howdy text               ]----------------//
