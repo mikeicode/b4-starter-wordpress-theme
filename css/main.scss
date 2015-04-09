@@ -2,15 +2,15 @@
    SCSS Import
    ========================================================================== */
 
-
-/* Vendors */
-@import "css/sass/vendors/bootstrap";
-
-
 /* Utilities */
 @import "css/sass/sass-utils/variables";
 @import "css/sass/sass-utils/mixins";
 @import "css/sass/sass-utils/functions";
+
+
+/* Vendors */
+@import "css/sass/vendors/bootstrap";
+@import "css/sass/vendors/gravityforms";
 
 
 /* Base */

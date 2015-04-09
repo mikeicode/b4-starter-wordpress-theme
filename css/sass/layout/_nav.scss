@@ -55,19 +55,16 @@
 
 /* nav links */
 
-.sf-menu li  {border-right:1px solid #83a4d3}
-.sf-menu li li, .sf-menu li li:last-child {border:none}
-
 .sf-menu li a, .sf-menu li a:visited {
-	font-size:17px;
+	color: $link-color;
+	font-size:16px;
     padding:5px 15px;
     text-decoration: none;  
 	font-weight:normal;
-	color:#656565;
 }
 
 .sf-menu li a:hover {
-	color: $main-red;
+	color: $link-roll;
 }
 
 /* nav drop menu */
@@ -78,31 +75,31 @@
 
 /* current links */
 
-.sf-menu li.current_page_item a {
+.sf-menu li.current-menu-item a {
 	color: #C4DAEF;
 }
 
-.sf-menu li.current_page_item li a {
+.sf-menu li.current-menu-item li a {
 	color: #fff;
 }
 
-.sf-menu li.current_page_item li a:hover {
+.sf-menu li.current-menu-item li a:hover {
 	color: #C4DAEF;
 }
 
-.sf-menu li.current_page_item li a {
+.sf-menu li.current-menu-item li a {
 	color: #fff;
 }
 
-.sf-menu li.current_page_parent a {
+.sf-menu li.current_menu_parent a {
 	color: #C4DAEF;
 }
 
-.sf-menu li.current_page_parent li a {
+.sf-menu li.current_menu_parent li a {
 	color: #fff;
 }
 
-.sf-menu li.current_page_parent li a:hover {
+.sf-menu li.current_menu_parent li a:hover {
 	color: #C4DAEF;
 }
 
@@ -120,7 +117,7 @@ optgroup, optgroup label { font-weight:normal !important; font-style:normal !imp
 
 /* styles for desktop */
 .tinynav { display: none }
-#tinynav1 { position:relative; top:9px; margin-top:0px }
+#tinynav1 { position:relative; }
 
 /* styles for mobile */
 @media screen and (max-width: 767px) {

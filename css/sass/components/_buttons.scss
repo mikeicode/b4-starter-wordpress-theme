@@ -4,24 +4,29 @@ a.button:visited, button:visited, input[type="submit"]:visited, input[type="rese
 	color: #fff;
 	border: none;
 	cursor: pointer;
-	padding: 5px;
+	padding: 5px 15px;
 	display: inline-block;
 	text-transform: uppercase;
 	outline: none;
 	position: relative;
-	border-radius: 2px;
-	
+	border-radius: 4px;
 	background: $button-color;
 
 }
 
 a.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover { 
+	
+	color:#fff;
 	background: $button-roll;
-	text-decoration:none
+	text-decoration:none;
+	
 }
 
 a.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active,
 a.button:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus { 
+	
+	color:#fff;
 	background: $button-active;
-	text-decoration:none
+	text-decoration:none;
+	
 }
