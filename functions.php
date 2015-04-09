@@ -37,6 +37,21 @@ function skeleton_styles()
 add_action( 'wp_enqueue_scripts', 'skeleton_styles' );
 
 //-----------------------------------------------------------------------------// 
+//----------------[ Remove jquery migrate script that wordpress loads   ]------//
+//-----------------------------------------------------------------------------// 
+
+add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+function remove_jquery_migrate( &$scripts)
+{
+    if(!is_admin())
+    {
+        $scripts->remove( 'jquery');
+        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+    }
+}
+
+//-----------------------------------------------------------------------------// 
 //----------------[ Register and set post thumbnail sizes     ]----------------//
 //-----------------------------------------------------------------------------// 
 
