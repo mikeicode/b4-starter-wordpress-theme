@@ -275,7 +275,7 @@ add_filter( 'mce_buttons_2', 'wpex_mce_buttons' );
 // Customize mce editor font sizes
 if ( ! function_exists( 'wpex_mce_text_sizes' ) ) {
 	function wpex_mce_text_sizes( $initArray ){
-		$initArray['fontsize_formats'] = "9px 10px 12px 13px 14px 15px 16px 18px 21px 24px 25px 28px 32px 36px";
+		$initArray['fontsize_formats'] = "9px 10px 12px 13px 14px 15px 16px 18px 20px 22px 24px 25px 28px 32px 36px";
 		return $initArray;
 	}
 }
@@ -284,7 +284,7 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 // Add custom Fonts to the Fonts list
 if ( ! function_exists( 'wpex_mce_google_fonts_array' ) ) {
 	function wpex_mce_google_fonts_array( $initArray ) {
-	    $initArray['font_formats'] = 'Arial=arial,helvetica,sans-serif;Roboto Regular=robotoregular;Roboto Bold=robotobold;Droid Sans Regular=droid_sansregular;Droid Sans Bold=droid_sansbold';
+	    $initArray['font_formats'] = 'Arial=arial,helvetica,sans-serif;Lato Regular=latoregular';
             return $initArray;
 	}
 }

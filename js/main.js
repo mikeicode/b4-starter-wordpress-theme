@@ -103,6 +103,32 @@ jQuery(document).ready(function($) {
 
 /*
 |--------------------------------------------------------------------------
+| Fancybox
+|--------------------------------------------------------------------------
+|
+|
+|
+*/		
+
+	myTheme.Fancybox = function () {
+		
+		$(".popup").fancybox({
+			maxWidth	: 900,
+			maxHeight	: 700,
+			fitToView	: false,
+			width		: '80%',
+			height		: '80%',
+			autoSize	: false,
+			closeClick	: false,
+			openEffect	: 'elastic',
+			closeEffect	: 'none'
+		});
+	
+	};
+	
+
+/*
+|--------------------------------------------------------------------------
 | Functions Initializers
 |--------------------------------------------------------------------------
 |
@@ -115,6 +141,7 @@ jQuery(document).ready(function($) {
 	myTheme.MobileNav();
 	myTheme.FitVids();
 	myTheme.TrimP();
+	myTheme.Fancybox();
 	
 	
 
