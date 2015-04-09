@@ -53,3 +53,60 @@ h5 { font-size: 12px; line-height: 18px; padding: 5px 0px; }
 h6 { font-size: 10px; line-height: 16px; }
 
 strong { font-weight:normal; font-family: $heading-font; }
+
+/* -----------------------------[ Blockquote ]----------------------------- */
+
+blockquote {
+	font-size:16px; 
+	border-left:2px dashed #999; 
+	padding:18px 0 1px 20px;
+	margin-left:3px; 
+	margin-bottom:40px;
+	
+		em {
+			font-size:14px;
+		}
+}
+	
+
+blockquote:before {
+	color: $link-color;
+	font-size: 32px;
+	line-height: 0.5em;
+	margin-right: 0.27em;
+	content: "\f10d";
+    font-family: FontAwesome;
+	float:left
+}
+
+
+/* -----------------------------[ Lists ]----------------------------- */
+
+
+ul.arrow-list {
+	padding-left:20px;
+	margin-left:0;
+	list-style-type:none	
+}
+
+.arrow-list li {
+    position: relative;
+	padding-left:18px
+}
+
+
+.arrow-list li:before {
+    content: "\f0da";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+
+    color: $link-color;
+    font-size: 14px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 1px;
+    left: 0;
+}
+
