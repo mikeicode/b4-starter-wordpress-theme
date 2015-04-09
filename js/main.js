@@ -78,7 +78,27 @@ jQuery(document).ready(function($) {
 		
 		$(".container").fitVids();
 	
-	};		
+	};	
+	
+
+/*
+|--------------------------------------------------------------------------
+| Trim empty P tags
+|--------------------------------------------------------------------------
+|
+|
+|
+*/		
+
+	myTheme.TrimP = function () {
+		
+		// Trimming white space
+		$('p').filter(function () { return $.trim(this.innerHTML) == "" }).remove();
+
+		// Without trimming white space
+		$('p').filter(function () { return this.innerHTML == "" }).remove();
+	
+	};	
 	
 
 /*
@@ -94,6 +114,7 @@ jQuery(document).ready(function($) {
 	myTheme.SearchPlaceholder();
 	myTheme.MobileNav();
 	myTheme.FitVids();
+	myTheme.TrimP();
 	
 	
 
