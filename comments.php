@@ -12,8 +12,6 @@
 
 	<?php return; endif; ?>
 
-	<?php // You can start editing here -- including this comment! ?>
-
 	<?php if ( have_comments() ) : ?>
 		<h2 id="comments-title">
 			<?php
@@ -32,7 +30,7 @@
 		<?php endif; // check for comment navigation ?>
 
 		<ol class="commentlist">
-			<?php wp_list_comments( array( 'avatar_size' => '45' ) ); ?>            
+			<?php wp_list_comments( array( 'avatar_size' => '50' ) ); ?>            
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>

@@ -32,7 +32,6 @@
           		</div>
                 
              
-             
             	<?php the_content("Continue reading " . the_title('', '', false)); ?> <!--The Content-->
 	 
              	<!-- the meta-->   
