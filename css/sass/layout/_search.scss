@@ -1,0 +1,22 @@
+ul.search-list {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	font-size:16px;
+	margin-bottom:25px
+}
+
+ul.search-list li:before {
+	color:#999;
+	content: "\f105";
+    font-family: FontAwesome;
+	margin-right:5px
+}
+
+ul.search-list li a:hover {
+	text-decoration:none
+}
+
+ul.search-list li {
+	margin-bottom:10px	
+}
