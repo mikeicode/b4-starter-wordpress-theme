@@ -97,6 +97,7 @@ jQuery(document).ready(function($) {
 
 		// Without trimming white space
 		$('p').filter(function () { return this.innerHTML == "" }).remove();
+		
 	
 	};	
 	

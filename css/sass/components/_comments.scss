@@ -1,4 +1,4 @@
-/* -----------------------------[ Comments ]----------------------------- */
+
 ol.commentlist {margin-left:0px}
 
 .commentlist li {
@@ -7,7 +7,7 @@ ol.commentlist {margin-left:0px}
   overflow: hidden;
   list-style-type: none;
   margin-bottom: 1.5em;
-  padding: 0.7335em 10px;
+  padding: 10px 15px;
 
 }
 .commentlist li:last-child {
@@ -29,7 +29,7 @@ ol.commentlist {margin-left:0px}
   margin-right:0px !important;
   margin-top: 0;
   margin-bottom:5px !important;
-  background:#eee
+  background-color: rgba(245, 245, 245, 0.5); 
 }
 
 .commentlist li.depth-3 {
@@ -37,7 +37,7 @@ ol.commentlist {margin-left:0px}
   margin-right:0px !important;
   margin-top: 0;
   margin-bottom:5px !important;
-  background:#fff
+  background-color: rgba(245, 245, 245, 0.5); 
 }
 
 .commentlist li.depth-4 {
@@ -45,7 +45,7 @@ ol.commentlist {margin-left:0px}
   margin-right:0px !important;
   margin-top: 0;
   margin-bottom:5px !important;
-  background:#eee
+  background-color: rgba(245, 245, 245, 0.5); 
 }
 
 .commentlist li:not(.depth-1) {
@@ -58,11 +58,11 @@ ol.commentlist {margin-left:0px}
 .commentlist li { border:2px solid #eee }
 
 .commentlist .vcard {
-  margin-left: 50px;
+  margin-left: 60px;
 }
 .commentlist .vcard cite.fn {
-  font-weight: 700;
   font-style: normal;
+  font-family: 'robotomedium';
 }
 .commentlist .vcard time {
   float: right;
@@ -76,7 +76,7 @@ ol.commentlist {margin-left:0px}
 }
 .commentlist .vcard img.avatar {
   position: absolute;
-  left: 6px;
+  left: 15px;
   padding: 2px;
   border: 1px solid #cecece;
   background: #fff;
@@ -92,15 +92,51 @@ ol.commentlist {margin-left:0px}
 .commentlist .comment-reply-link {
   text-decoration: none;
   float: right;
-  background: #4598bb;
+  background: #363636;
   padding: 3px 5px;
   color: #fff;
-  opacity: 0.65;
   margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 0.9em;
+  font-size: 13px;
+  text-transform: uppercase
 }
 .commentlist .comment-reply-link:hover,
 .commentlist .comment-reply-link:focus {
-  opacity: 1;
+  opacity: 0.9;
 }
+
+
+.comment-form-comment label{display:block}
+textarea#comment{width:100%;max-width:100%}
+
+
+h3#reply-title, h2#comments-title {
+    border-bottom: 1px solid #cacaca;
+    color: #4b4b4b;
+    font-family: 'robotomedium';
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 22px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    
+}
+
+#comments {
+  padding-top:20px
+}
+
+h2#comments-title em {font-size:13px;}
+
+.comment-meta{margin-left:61px;margin-bottom:20px}
+
+
+
+
+
+
+
+
+
+
+

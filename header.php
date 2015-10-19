@@ -20,10 +20,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title><?php wp_title(); ?></title>
 
-	<!-- CSS
-  ================================================== -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
 	<!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">

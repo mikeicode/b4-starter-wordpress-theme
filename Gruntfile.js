@@ -9,7 +9,8 @@ module.exports = function(grunt) {
         concat: {   
 			dist: {
 				src: [
-					'js/libs/*.js' // All JS in the libs folder
+					'js/libs/*.js', // All JS in the libs folder
+					'js/main.js'
 					
 				],
 				dest: 'js/build/production.js',
@@ -58,7 +59,7 @@ module.exports = function(grunt) {
 			},
 			
 			scripts: {
-        		files: ['js/libs/*.js'],
+        		files: ['js/libs/*.js','js/main.js'],
         		tasks: ['concat', 'uglify'],
         		options: {
             		spawn: false,

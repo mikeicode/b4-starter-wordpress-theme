@@ -245,13 +245,13 @@ html > body .entry ul, .gform_wrapper ul {
 .gform_wrapper .top_label .gfield_label {
     clear: both;
     display: inline-block;
-    font-weight: bold;
+
     line-height: 1.3;
     margin: 0.625em 0 0.5em;
 }
 .gform_wrapper .left_label .gfield_label {
     float: left;
-    font-weight: bold;
+
     margin: 0.75em 15px 0 0;
     width: 29%;
 }
@@ -260,7 +260,7 @@ html > body .entry ul, .gform_wrapper ul {
 }
 .gform_wrapper .right_label .gfield_label {
     float: left;
-    font-weight: bold;
+
     margin: 0.75em 1em 0 0;
     text-align: right;
     width: 29%;
@@ -339,7 +339,7 @@ html > body .entry ul, .gform_wrapper ul {
 }
 .gform_wrapper .gsection .gfield_label, .gform_wrapper h2.gsection_title, .gform_wrapper h3.gform_title {
     font-size: 1.3em;
-    font-weight: bold;
+
 }
 .gform_wrapper h3.gform_title {
     letter-spacing: normal !important;
@@ -422,9 +422,7 @@ html > body .entry ul, .gform_wrapper ul {
     margin-left: 0.25em;
 }
 .gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
-    background-color: #ffdfe0;
-    border-bottom: 1px solid #c89797;
-    border-top: 1px solid #c89797;
+        background-color: #efefef;
     margin-bottom: 0.375em !important;
     padding: 0;
 }
@@ -497,7 +495,6 @@ li.gfield + li.gfield.gfield_creditcard_warning {
     top: 0.75em;
 }
 .gform_wrapper div.validation_error {
-   font-family: 'droid_sansbold';
 
     clear: both;
     color: #cd1d0a;
@@ -566,13 +563,11 @@ div.gf_page_steps + div.validation_error {
 .gform_wrapper div.gfield_description.validation_error {
     color: #790000;
     font-size: 0.875em;
-    font-weight: bold;
     line-height: 1.2;
     margin-bottom: 1em;
 }
 .gform_wrapper .validation_message {
     color: #790000;
-    font-weight: bold;
     letter-spacing: normal;
 }
 .gform_wrapper li.gfield_error input[type="text"], .gform_wrapper li.gfield_error input[type="url"], .gform_wrapper li.gfield_error input[type="email"], .gform_wrapper li.gfield_error input[type="tel"], .gform_wrapper li.gfield_error input[type="number"], .gform_wrapper li.gfield_error input[type="password"], .gform_wrapper li.gfield_error textarea {
@@ -619,7 +614,7 @@ div.gf_page_steps + div.validation_error {
     margin: 0 0 0.5em;
 }
 .gform_wrapper ul.gfield_radio li input[type="radio"]:checked + label, .gform_wrapper ul.gfield_checkbox li input[type="checkbox"]:checked + label {
-    font-weight: bold;
+
 }
 .gform_wrapper input.datepicker.datepicker_with_icon {
     display: inline-block;
@@ -962,7 +957,7 @@ body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html dl {
     padding-left: 0;
 }
 body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html dl dt {
-    font-weight: bold;
+
 }
 body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html dl dd {
     margin: 0 0 1em 1.5em;
@@ -979,7 +974,7 @@ body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html dl dd {
     border-spacing: 0;
 }
 .gform_wrapper table.gfield_list thead th {
-    font-weight: bold;
+
     text-align: left;
 }
 .gform_wrapper li.gfield.gfield_error table.gfield_list thead th {
@@ -1187,7 +1182,7 @@ body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html dl dd {
 .gform_wrapper .chosen-container .chosen-results li.group-result {
     cursor: default;
     display: list-item;
-    font-weight: bold;
+
 }
 .gform_wrapper .chosen-container .chosen-results li.group-option {
     padding-left: 15px;
