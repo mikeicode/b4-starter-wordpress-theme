@@ -1,8 +1,4 @@
 <?php
-/**
- * @package WordPress
- * 
- */
  	get_header();
 	get_template_part( 'menu', 'index' );  
 ?>  
@@ -14,7 +10,7 @@
     	
         	<!-- main article - left column -->
         	<article class="col-xs-12 col-sm-9">
-        		
+        		<?php query_posts($query_string . '&showposts=-1'); ?>
 				<?php if ( have_posts() ) : ?>
               
                    <h1 class="mb25"><?php printf( __( 'Search Results for: %s', 'mb' ), '<span>' . get_search_query() . '</span>' ); ?></h1>

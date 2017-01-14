@@ -1,8 +1,4 @@
 <?php
-/**
- * @package WordPress
- * 
- */
  	get_header();
 	get_template_part( 'menu', 'index' );  
 ?>     
@@ -26,13 +22,18 @@
         
 			<?php while ( have_posts() ) : the_post(); ?> <!--  the loop -->
                         
-        	<article id="post-<?php the_ID(); ?>">
-          		<div class="title">            
-             		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title('<h3>', '</h3>'); ?></a>  <!--Post titles-->
-          		</div>
+        	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+          		<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                
+                	<?php
+                            if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail(17))) {
+                                the_post_thumbnail('gallery_landing_image_size');
+                            }
+                        ?>
                 
              
-            	<?php the_content("Continue reading " . the_title('', '', false)); ?> <!--The Content-->
+                        <?php the_excerpt(); ?>
 	 
              	<!-- the meta-->   
               	<div class="meta"> 
@@ -49,9 +50,8 @@
   			<?php if (  $wp_query->max_num_pages > 1 ) : ?>
 				
                 <nav id="nav-below">
-            		<hr>
-            		<div class="nav-previous"><?php next_posts_link(); ?></div>
-            		<div class="nav-next"><?php previous_posts_link(); ?></div>
+            		<div class="nav-next"><?php previous_posts_link('<i class="fa fa-angle-left"></i> Newer Posts'); ?></div>
+                    <div class="nav-previous"><?php next_posts_link('Previous Posts <i class="fa fa-angle-right"></i>'); ?></div>
           		</nav><!-- #nav-below -->
           	
 			<?php endif; ?>

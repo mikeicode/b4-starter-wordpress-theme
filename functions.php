@@ -167,7 +167,7 @@ function custom_loginlogo_url($url) {
 }
 
 //-----------------------------------------------------
-// Replace default admin login logo and link
+// Replace admin footer text
 //----------------------------------------------------- 
 
 function remove_footer_admin () {
@@ -180,6 +180,22 @@ add_filter('admin_footer_text', 'remove_footer_admin');
 //======================================================================
 // Disable things not needed for this specific theme
 //======================================================================
+
+
+//-----------------------------------------------------
+// Remove Tags support for Posts
+//----------------------------------------------------- 
+
+add_action('init', 'unregister_posts_tag');
+function unregister_posts_tag() {
+    unregister_taxonomy_for_object_type('post_tag', 'post');
+}
+
+//-----------------------------------------------------
+// Remove Welcome screen from dashboard
+//----------------------------------------------------- 
+
+remove_action('welcome_panel', 'wp_welcome_panel');
 
 //-----------------------------------------------------
 // Remove Dashboard Widgets
@@ -304,7 +320,7 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 
 if ( ! function_exists( 'wpex_mce_google_fonts_array' ) ) {
 	function wpex_mce_google_fonts_array( $initArray ) {
-	    $initArray['font_formats'] = 'Arial=arial,helvetica,sans-serif;Lato Regular=latoregular';
+	    $initArray['font_formats'] = 'Arial=arial,helvetica,sans-serif;latohairline=latohairline;latothin=latothin;latolight=latolight;latoregular=latoregular;latomedium=latomedium;latosemibold=latosemibold;latobold=latobold;latoheavy=latoheavy;latoblack=latoblack;';
             return $initArray;
 	}
 }

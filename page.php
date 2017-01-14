@@ -1,8 +1,4 @@
 <?php
-/**
- * @package WordPress
- * 
- */
  	get_header();
 	get_template_part( 'menu', 'index' );  
 ?>  
@@ -17,6 +13,7 @@
         	<!-- main article - left column -->
         	<article id="post-<?php the_ID(); ?>" class="col-xs-12 col-sm-9">
         		<?php the_content(); ?>
+                <?php edit_post_link(); ?> 
         	</article><!-- /main article - left column --> 
         
         	<!-- right column sidebar -->

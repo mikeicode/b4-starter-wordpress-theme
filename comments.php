@@ -1,22 +1,17 @@
-<?php
-/**
- * @package WordPress
- * 
- */
-?>
+
 
 	<div id="comments">
 	 <?php if ( post_password_required() ) : ?>
 		<div class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'WP-Skeleton' ); ?></div>
-	</div><!-- .comments -->
+	</div>
 
 	<?php return; endif; ?>
 
 	<?php if ( have_comments() ) : ?>
 		<h2 id="comments-title">
 			<?php
-			    printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number()),
-			        number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
+			    printf( _n( 'One Response', '%1$s Responses', get_comments_number()),
+			        number_format_i18n( get_comments_number() ));
 			?>
 		</h2>
 
@@ -47,15 +42,10 @@
 
 		<?php else : // or, if we don't have comments:
 
-			/* If there are no comments and comments are closed,
-			 * let's leave a little note, shall we?
-			 * But only on posts! We don't want the note on pages.
-			 */
 			if ( ! comments_open() && ! is_page() ) :
 			?>
 			<p class="nocomments"><?php _e( 'Comments are closed.'); ?></p>
 			<?php endif; // end ! comments_open() && ! is_page() ?>
-
 
 		<?php endif; ?>
 

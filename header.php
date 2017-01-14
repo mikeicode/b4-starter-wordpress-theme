@@ -1,8 +1,3 @@
-<?php
-/**
- * @package WordPress
- */
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>> 
     
@@ -21,16 +16,29 @@
     <title><?php wp_title(); ?></title>
 
 	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+	================================================== 
+    https://realfavicongenerator.net
+    -->
+    
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+	
   
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<?php wp_head(); ?>        
+<?php wp_head(); ?>  
+
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->    
 </head>
 
-<body <?php body_class(); ?>><!-- the Body  -->
+<body <?php body_class(); ?>>

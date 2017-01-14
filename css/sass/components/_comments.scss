@@ -62,7 +62,6 @@ ol.commentlist {margin-left:0px}
 }
 .commentlist .vcard cite.fn {
   font-style: normal;
-  font-family: 'robotomedium';
 }
 .commentlist .vcard time {
   float: right;
@@ -111,10 +110,7 @@ textarea#comment{width:100%;max-width:100%}
 
 h3#reply-title, h2#comments-title {
     border-bottom: 1px solid #cacaca;
-    color: #4b4b4b;
-    font-family: 'robotomedium';
     font-size: 18px;
-    letter-spacing: 1px;
     line-height: 22px;
     margin-bottom: 25px;
     padding-bottom: 10px;
@@ -130,8 +126,21 @@ h2#comments-title em {font-size:13px;}
 
 .comment-meta{margin-left:61px;margin-bottom:20px}
 
+.comment-form-url{display:none}
 
 
+
+#comments {
+
+	.comment-author, .comment-meta {
+		padding-left:60px;
+	}
+	
+	.comment-meta {
+		margin-bottom:20px;
+	}
+
+}
 
 
 

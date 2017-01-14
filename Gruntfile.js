@@ -35,24 +35,28 @@ module.exports = function(grunt) {
 			} 
 		},
 		
-		autoprefixer: {
-		  options: {
-				browsers: ['last 2 versions']
-		  },
-				single_file: {
-			options: {
-			  // Target-specific options go here.
-			},
-			src: 'css/output.css',
-			dest: 'css/output.css'
-		  },
+		  
+	  postcss: {
+		options: {
+		  map: true,
+		  processors: [
+			require('autoprefixer')({browsers: ['last 2 versions']})
+		  ]
 		},
-	
+		dist: {
+		  src: 'css/output.css'
+		}
+	  },
+
+
 		
 		watch: {
     		css: {
    			 	files: ['css/sass/**/*.scss'], 
-    			tasks: ['sass','autoprefixer'], 
+    			//tasks: ['sass','autoprefixer'], 
+				
+				tasks: ['sass','postcss'],
+				
     			options: {
         			spawn: false,
     			}
@@ -76,11 +80,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify'); // minify that one js file
 	grunt.loadNpmTasks('grunt-contrib-watch'); // watch for changes
 	grunt.loadNpmTasks('grunt-contrib-sass'); // sass (SCSS)
-	grunt.loadNpmTasks('grunt-autoprefixer'); //autoprefixer
+	
+	grunt.loadNpmTasks('grunt-postcss'); //post CSS to replace autoprefixer
 	
 	
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'autoprefixer']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'postcss']);
 	
 
 };

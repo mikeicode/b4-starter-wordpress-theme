@@ -16,34 +16,25 @@ body, input, textarea {
    Main Elements
    ========================================================================== */
 
-/* -----------------------------[ Vertical Styles ]----------------------------- */
+/* Vertical Styles */
 .entry-meta { margin-bottom: 10px; }
 p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .gallery-row, .comment-list ul, .comment-list ol { margin-bottom: 20px; }
 .hentry, .widget, .comment, .navigation-links { margin-bottom: 40px; }
 
-/* -----------------------------[ Lists ]----------------------------- */
+/* Lists */
 ul, ol { margin-left: 2em; }
 ol { list-style-type: decimal; }
 nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
 
-/* -----------------------------[ Text Elements ]----------------------------- */
+/* Text Elements */
 address { font-style: italic; }
 abbr[title], acronym[title], dfn[title] { border-bottom: 1px solid #666; }
 
-/* -----------------------------[ Tables ]----------------------------- */
-table { border: 1px solid #ccc; border-width: 1px; line-height: 18px; margin: 0 0 22px 0; text-align: left; padding: 0 5px; }
-table .even { background: #ddd; }
-caption { text-align: left; }
-tr { border-bottom: 1px solid #ccc; }
-th, td { padding: 5px 3px; }
-td { vertical-align: top; }
-
-
-/* -----------------------------[ Links ]----------------------------- */
+/* Links */
 a, a:active, a:visited { color: $link-color; text-decoration: none; }
 a:hover { color: $link-roll; text-decoration: none; }
 
-/* -----------------------------[ Headings ]----------------------------- */
+/* Headings */
 h1, h2, h3, h4, h5, h6 { font-weight:normal; font-family: $heading-font; margin-bottom:15px }
 h1 { font-size: 24px; line-height: 28px; padding: 5px 0px; }
 h2 { font-size: 20px; line-height: 22px; padding: 5px 0px; }
@@ -54,8 +45,7 @@ h6 { font-size: 10px; line-height: 16px; }
 
 strong { font-weight:normal; font-family: $heading-font; }
 
-/* -----------------------------[ Blockquote ]----------------------------- */
-
+/* Blockquote */
 blockquote {
 	font-size:16px; 
 	border-left:2px dashed #999; 
@@ -67,7 +57,6 @@ blockquote {
 			font-size:14px;
 		}
 }
-	
 
 blockquote:before {
 	color: $link-color;
@@ -80,8 +69,7 @@ blockquote:before {
 }
 
 
-/* -----------------------------[ Lists ]----------------------------- */
-
+/* Lists */
 
 ul.arrow-list {
 	padding-left:20px;
@@ -94,13 +82,11 @@ ul.arrow-list {
 	padding-left:18px
 }
 
-
 .arrow-list li:before {
     content: "\f0da";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
-    text-decoration: inherit;
 
     color: $link-color;
     font-size: 14px;
@@ -110,3 +96,7 @@ ul.arrow-list {
     left: 0;
 }
 
+
+/* =============================================================================
+   Custom Theme Typography
+   ========================================================================== */

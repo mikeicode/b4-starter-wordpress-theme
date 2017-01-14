@@ -1,4 +1,4 @@
-/*** essential styles ***/
+
 .sf-menu, .sf-menu * {
 	margin: 0;
 	padding: 0;
@@ -6,6 +6,8 @@
 }
 .sf-menu li {
 	position: relative;
+	white-space: nowrap; 
+	*white-space: normal;
 }
 .sf-menu ul {
 	position: absolute;
@@ -13,6 +15,7 @@
 	top: 100%;
 	left: 0;
 	z-index: 99;
+	min-width: 12em;
 }
 .sf-menu > li {
 	float: left;
@@ -22,36 +25,22 @@
 	display: block;
 }
 
-.sf-menu a {
-	display: block;
-	position: relative;
-}
 .sf-menu ul ul {
 	top: 0;
 	left: 100%;
 }
 
-/*** skin ***/
 .sf-menu {
 	float: left;
 	margin-top:5px
 }
 
-.sf-menu ul {
-	min-width: 12em; 
-}
 .sf-menu a {
-	padding: .75em 1em;
-	text-decoration: none;
+	display: block;
+	position: relative;
 	zoom: 1; 
 }
-.sf-menu a {
-	color: #fff;
-}
-.sf-menu li {
-	white-space: nowrap; 
-	*white-space: normal; 
-}
+
 
 /* nav links */
 
@@ -70,7 +59,8 @@
 /* nav drop menu */
 
 .sf-menu li ul {
-	background:#4472b6
+	background:rgba(255,255,255,0.95);
+	box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
 }
 
 /* current links */
@@ -91,15 +81,15 @@
 	color: #fff;
 }
 
-.sf-menu li.current_menu_parent a {
+.sf-menu li.current-menu-parent a {
 	color: #C4DAEF;
 }
 
-.sf-menu li.current_menu_parent li a {
+.sf-menu li.current-menu-parent li a {
 	color: #fff;
 }
 
-.sf-menu li.current_menu_parent li a:hover {
+.sf-menu li.current-menu-parent li a:hover {
 	color: #C4DAEF;
 }
 
@@ -107,11 +97,10 @@
 
 
 
-
-
-
-/* #Mobile Menu
-================================================== */
+/* =============================================================================
+   Mobile Menu
+   ========================================================================== */
+   
 optgroup, optgroup label { font-weight:normal !important; font-style:normal !important;  }
 
 
@@ -126,5 +115,7 @@ optgroup, optgroup label { font-weight:normal !important; font-style:normal !imp
 }
 
 #menu-mobile-nav {display:none }
+
+
 
 

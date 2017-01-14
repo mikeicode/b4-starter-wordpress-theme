@@ -101,6 +101,8 @@ jQuery(document).ready(function($) {
 	
 	};	
 	
+	
+	
 
 /*
 |--------------------------------------------------------------------------
@@ -124,8 +126,63 @@ jQuery(document).ready(function($) {
 			openEffect	: 'elastic',
 			closeEffect	: 'none'
 		});
+		
+		
+		
+		var thumbnails = 'a[href$=".gif"],a[href$=".jpg"],a[href$=".jpeg"],a[href$=".png"],a[href$=".GIF"],a[href$=".JPG"],a[href$=".JPEG"],a[href$=".PNG"]';
+		$(thumbnails).addClass("fancybox");
+		$('.fancybox').fancybox();
 	
 	};
+
+
+/*
+|--------------------------------------------------------------------------
+| isotope
+|--------------------------------------------------------------------------
+|
+|
+|
+*/		
+
+	myTheme.Isotope = function () {
+	
+		
+		var isotopeContainer = $('.isotopeContainer');
+		if( !isotopeContainer.length || !jQuery().isotope ) return;
+		$win.load(function(){
+			isotopeContainer.isotope({
+				itemSelector: '.isotopeSelector',
+				layoutMode: 'fitRows'
+			});
+			
+		/* $('.isotopeFilters2').on( 'click', 'a', function(e) {
+				$('.isotopeFilters2').find('.active').removeClass('active');
+				$(this).parent().addClass('active');
+				var filterValue = $(this).attr('data-filter');
+				isotopeContainer.isotope({ filter: filterValue });
+				e.preventDefault();
+			}); */
+		
+		}); 
+		
+	
+	};
+	
+	
+/*
+|--------------------------------------------------------------------------
+| Same height columns
+|--------------------------------------------------------------------------
+|
+|
+|
+*/	
+	
+	  myTheme.Matchheight = function () {
+		  $('.matchheight').matchHeight();
+		  $('.footer-col').matchHeight();
+	  };
 	
 
 /*
@@ -143,6 +200,8 @@ jQuery(document).ready(function($) {
 	myTheme.FitVids();
 	myTheme.TrimP();
 	myTheme.Fancybox();
+	myTheme.Isotope();
+	myTheme.Matchheight();
 	
 	
 
