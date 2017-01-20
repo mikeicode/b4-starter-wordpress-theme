@@ -170,6 +170,22 @@ jQuery(document).ready(function($) {
 	};
 	
 	
+	// for gallery page
+	myTheme.Isotope2 = function () {
+		
+		var isotopeContainer = $('.gallery');
+		if( !isotopeContainer.length || !jQuery().isotope ) return;
+		$win.load(function(){
+			isotopeContainer.isotope({
+				itemSelector: '.gallery-item'
+				//layoutMode: 'fitRows'
+			});
+		});
+		
+	
+	};
+	
+	
 /*
 |--------------------------------------------------------------------------
 | Same height columns
@@ -201,6 +217,7 @@ jQuery(document).ready(function($) {
 	myTheme.TrimP();
 	myTheme.Fancybox();
 	myTheme.Isotope();
+	myTheme.Isotope2();
 	myTheme.Matchheight();
 	
 	
