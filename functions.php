@@ -163,7 +163,7 @@ echo '<style type="text/css">
 add_action('login_head', 'custom_loginlogo');
 add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 function custom_loginlogo_url($url) {
-	return 'http://example.com';
+	return '/';
 }
 
 //-----------------------------------------------------
