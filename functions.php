@@ -328,7 +328,7 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_google_fonts_array' );
 
 //======================================================================
 // Fix Gravity Form Tabindex Conflicts
-//======================================================================/**
+//======================================================================
 
 add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
 function gform_tabindexer( $tab_index, $form = false ) {
@@ -379,5 +379,22 @@ if( function_exists('acf_add_options_page') ) {
 	
 			
 }
+
+//======================================================================
+// Include PHP file in Content using [shortcode] 
+//======================================================================
+
+function include_file($atts) {
+     $a = shortcode_atts( array(
+        'slug' => 'NULL',
+       ), $atts );
+
+      if($slug != 'NULL'){
+        ob_start();
+        get_template_part($a['slug']);
+        return ob_get_clean();
+      }
+ }
+ add_shortcode('include', 'include_file');
 
 ?>
