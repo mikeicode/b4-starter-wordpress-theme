@@ -16,11 +16,9 @@
     <title><?php wp_title(); ?></title>
 
 	<!-- Favicons
-	================================================== 
-    https://realfavicongenerator.net
-    -->
+	==================================================  -->
     
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
 	
   
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -31,14 +29,9 @@
 
 <?php wp_head(); ?>  
 
-<!-- Google Analytics -->
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-XXXXX-Y', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-<!-- End Google Analytics -->    
+ 
+<?php the_field( 'header_code', 'option' ); ?>   
 </head>
 
 <body <?php body_class(); ?>>
+<?php the_field( 'body_code', 'option' ); ?> 

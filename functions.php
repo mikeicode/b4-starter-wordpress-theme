@@ -326,7 +326,58 @@ if ( ! function_exists( 'wpex_mce_google_fonts_array' ) ) {
 }
 add_filter( 'tiny_mce_before_init', 'wpex_mce_google_fonts_array' );
 
+//======================================================================
+// Fix Gravity Form Tabindex Conflicts
+//======================================================================/**
+
+add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
+function gform_tabindexer( $tab_index, $form = false ) {
+    $starting_index = 1000; // if you need a higher tabindex, update this number
+    if( $form )
+        add_filter( 'gform_tabindex_' . $form['id'], 'gform_tabindexer' );
+    return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
+}
 
 
+//-----------------------------------------------------
+// Hide ACF field group menu item
+//-----------------------------------------------------
+//add_filter('acf/settings/show_admin', '__return_false');
+
+//-----------------------------------------------------
+// Theme Options
+//-----------------------------------------------------
+
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> '404 Page Settings',
+		'menu_title'	=> '404 Page',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Header Settings',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+			
+}
 
 ?>
