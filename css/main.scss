@@ -3,46 +3,46 @@
    ========================================================================== */
 
 /* Utilities */
-@import "css/sass/sass-utils/variables";
-@import "css/sass/sass-utils/mixins";
-@import "css/sass/sass-utils/functions";
+@import "sass/sass-utils/variables";
+@import "sass/sass-utils/mixins";
+@import "sass/sass-utils/functions";
 
 
 /* Vendors */
-@import "css/sass/vendors/bootstrap";
-@import "css/sass/vendors/gravityforms";
-@import "css/sass/vendors/fancybox";
+@import "sass/vendors/bootstrap";
+@import "sass/vendors/gravityforms";
+@import "sass/vendors/fancybox";
 
 
 /* Base */
-@import "css/sass/base/fonts";
-@import "css/sass/base/reset";
-@import "css/sass/base/typography";
-@import "css/sass/base/alignment";
+@import "sass/base/fonts";
+@import "sass/base/reset";
+@import "sass/base/typography";
+@import "sass/base/alignment";
 
 
 /* Layout */
-@import "css/sass/layout/header";
-@import "css/sass/layout/footer";
-@import "css/sass/layout/sidebar";
-@import "css/sass/layout/blog";
-@import "css/sass/layout/nav";
-@import "css/sass/layout/forms";
-@import "css/sass/layout/search";
-@import "css/sass/layout/error404";
+@import "sass/layout/header";
+@import "sass/layout/footer";
+@import "sass/layout/sidebar";
+@import "sass/layout/blog";
+@import "sass/layout/nav";
+@import "sass/layout/forms";
+@import "sass/layout/search";
+@import "sass/layout/error404";
 
 
 /* Components */
-@import "css/sass/components/comments";
-@import "css/sass/components/buttons";
-@import "css/sass/components/widgets";
-@import "css/sass/components/accordions";
-@import "css/sass/components/gallery";
+@import "sass/components/comments";
+@import "sass/components/buttons";
+@import "sass/components/widgets";
+@import "sass/components/accordions";
+@import "sass/components/gallery";
 
 
 /* Pages */
-@import "css/sass/pages/home";
+@import "sass/pages/home";
 
 
 /* Shame */
-@import "css/sass/shame/shame";
+@import "sass/shame/shame";
