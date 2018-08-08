@@ -9,13 +9,15 @@
 
 
 /* Vendors */
-@import "sass/vendors/bootstrap";
+//@import "sass/vendors/bootstrap";
+@import "sass/vendors/bootstrap-grid";
 @import "sass/vendors/gravityforms";
 @import "sass/vendors/fancybox";
 
 
 /* Base */
 @import "sass/base/fonts";
+@import "sass/base/bootstrap-reset";
 @import "sass/base/reset";
 @import "sass/base/typography";
 @import "sass/base/alignment";
@@ -46,3 +48,5 @@
 
 /* Shame */
 @import "sass/shame/shame";
+
+//@import "sass/vendors/bootstrapb4";

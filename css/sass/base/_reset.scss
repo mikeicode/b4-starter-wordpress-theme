@@ -2,16 +2,19 @@
    HTML5 display definitions
    ========================================================================== */
 
+/*
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
+*/
 
 
 /* =============================================================================
    HTML5 reset styles
    ========================================================================== */
 
+/*
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,del, dfn, em, img, 
@@ -36,43 +39,43 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin:
 input, select {vertical-align:middle;}
 small { font-size: 85%; }
 b, strong, th { font-weight: bold; }
+*/
 
-/* --------[Font normalization inspired by YUI Library's fonts.css]-------- */
-html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
-/* --------[Normalize monospace sizing]-------- */
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
-/* --------[Fix sup and sub line-height]-------- */
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }sup { top: -0.5em; }sub { bottom: -0.25em; }
-/* --------[Remove default scrollbar in IE, Align to text-top]-------- */
-textarea { overflow: auto; vertical-align:text-top; }
-/* --------[Fix IE image sizing]-------- */
-.ie7 img { -ms-interpolation-mode: bicubic; }
-/* --------[Correct overflow not hidden in IE9]-------- */
-svg:not(:root) { overflow: hidden; }
+/* --------[Font normalization inspired by YUI Library's fonts.css]-------- 
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } */
+/* body { font:13px/1.231 sans-serif; *font-size:small; }  Hack retained to preserve specificity */ 
+/* --------[Normalize monospace sizing]-------- 
+pre, code, kbd, samp { font-family: monospace, sans-serif; } */
+/* --------[Fix sup and sub line-height]-------- 
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }sup { top: -0.5em; }sub { bottom: -0.25em; } */
+/* --------[Remove default scrollbar in IE, Align to text-top]-------- 
+textarea { overflow: auto; vertical-align:text-top; } */
+
+/* --------[Accessible focus treatment]-------- 
+a:hover, a:active { outline: none; }*/
+
 /* --------[Text selection color]-------- */
 ::-moz-selection { background: $text-highlight-color; color:#fff; text-shadow: none; }
 ::selection { background: $text-highlight-color; color:#fff; text-shadow: none; }
 /* --------[j.mp/webkit-tap-highlight-color]-------- */
 a:link { -webkit-tap-highlight-color: $text-highlight-color; }
-/* --------[Accessible focus treatment]-------- */
-a:hover, a:active { outline: none; }
 
 
-/* -----------------------------[ Text Elements ]----------------------------- */
+/* -----------------------------[ Text Elements ]----------------------------- 
 address { font-style: italic; }
-abbr[title], acronym[title], dfn[title] { border-bottom: 1px solid #666; }
+abbr[title], acronym[title], dfn[title] { border-bottom: 1px solid #666; } */
 
-/* -----------------------------[ Tables ]----------------------------- */
+/* -----------------------------[ Tables ]----------------------------- 
 table { border: 1px solid #ccc; border-width: 1px; line-height: 18px; margin: 0 0 22px 0; text-align: left; padding: 0 5px; }
 table .even { background: #ddd; }
 caption { text-align: left; }
 tr { border-bottom: 1px solid #ccc; }
 th, td { padding: 5px 3px; }
-td { vertical-align: top; }
+td { vertical-align: top; } */
 
 /* -----------------------------[ Images ]----------------------------- */
-img { max-width:100%; height:auto }
+/* img { max-width:100%; height:auto } */
+
 img.alignleft { float: left; margin-right: 20px; margin-top: 5px; }
 img.alignright { display: block; float: right; margin-left: 20px; margin-top: 5px; }
 img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: both; margin-top: 5px; }
@@ -85,18 +88,18 @@ img.aligncenter { margin-left: auto; margin-right: auto; display: block; clear: 
 
 .wp-smiley { max-height: 13px; margin: 0 !important; } /* Prevent the smileys from breaking line-height */
 
-/* -----------------------------[ Global ]----------------------------- */
-html { overflow-y: scroll; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+/* -----------------------------[ Global ]----------------------------- 
+html { overflow-y: scroll; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; } */
 
 /* -----------------------------[ Basic Alignments ]----------------------------- */
-.aligncenter { display:block; margin:0 auto }
+/*.aligncenter { display:block; margin:0 auto }
 .alignleft { float:left }
 .alignright { float:right }
-/* clearfix */
+ clearfix 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
-.clear { clear:both }
+.clear { clear:both } */
 
 
 
