@@ -30,8 +30,6 @@
 <?php wp_head(); ?>  
 
  
-<?php the_field( 'header_code', 'option' ); ?>   
 </head>
 
 <body <?php body_class(); ?>>
-<?php the_field( 'body_code', 'option' ); ?> 
