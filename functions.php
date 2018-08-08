@@ -1,22 +1,11 @@
 <?php
 
-// Comments styling cheatsheet
-
-//======================================================================
-// CATEGORY LARGE FONT
-//======================================================================
-
-//-----------------------------------------------------
-// Sub-Category Smaller Font
-//-----------------------------------------------------
-
-
 
 //======================================================================
 // Register and Load Scripts and Stylesheets
 //====================================================================== 
 
-function skeleton_scripts()  
+function load_scripts()  
     {  
          
         // Register scripts
@@ -26,19 +15,21 @@ function skeleton_scripts()
 		wp_enqueue_script( 'scripts' );
 		
     }  
-add_action( 'wp_enqueue_scripts', 'skeleton_scripts' );  
+add_action( 'wp_enqueue_scripts', 'load_scripts' );  
 
-function skeleton_styles()  
+function load_styles()  
 	{
 	
 		// Register styles
 		wp_register_style( 'output', get_template_directory_uri() . '/css/output.css', array(), '1.0', 'all' );
+	    wp_register_style( 'font-awesome-free', '//use.fontawesome.com/releases/v5.2.0/css/all.css' );
 
 		// Enqueue styles 
 		wp_enqueue_style( 'output' );
+		wp_enqueue_style( 'font-awesome-free' );
 	
 	}
-add_action( 'wp_enqueue_scripts', 'skeleton_styles' );
+add_action( 'wp_enqueue_scripts', 'load_styles' );
 
 
 //======================================================================
