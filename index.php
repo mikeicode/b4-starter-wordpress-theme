@@ -10,26 +10,42 @@
 		echo'</h2></div></div></div></section>';
 	}
 ?> 
-     
+
+
     <?php while ( have_posts() ) : the_post(); ?> 
+	
+	<?php
+		/* column width based on featured image / video */ 
+		if ( has_post_format( 'video' )) {
+			$leftClasses = 'col-sm-4 col-md-5';
+			$rightClasses = 'col-sm-8 col-md-7';
+		} elseif ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) {
+			$leftClasses = 'col-sm-4 col-md-5';
+			$rightClasses = 'col-sm-8 col-md-7';
+		} else {
+			$leftClasses = '';
+			$rightClasses = 'col';
+		}
+	?>
+
     <section class="post-wrap">
         <div class="container">
     
                 <div class="row"> 
                 
-                    <div class="col-sm-4 col-md-5">
+                    <div class="<?php echo $leftClasses ?>">
                     
 						<?php
                             if ( has_post_format( 'video' )) {
-                              the_field( 'video_link' );
+                            	the_field( 'video_link' );
                             } elseif ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) {
-                                    the_post_thumbnail('blog_image_size');
-                             }
+                                the_post_thumbnail('blog_image_size');
+                            }
                         ?>
-                        
+						
                     </div>
                     
-                    <div class="col-sm-8 col-md-7">
+                    <div class="<?php echo $rightClasses ?>">
                         
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             
