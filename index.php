@@ -17,7 +17,7 @@
     
                 <div class="row"> 
                 
-                    <div class="col-sm-4 col-md-5" id="sidebar">
+                    <div class="col-sm-4 col-md-5">
                     
 						<?php
                             if ( has_post_format( 'video' )) {
@@ -49,15 +49,13 @@
     </section>
     
     <?php endwhile; ?>
-    
 
-        <?php /* Display navigation to next/previous pages when applicable */ ?>
+		<!-- pagination -->
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>
         
         	<?php
-				
-					$linkText = 'Posts';
-		   ?>
+				$linkText = 'Posts';
+		   	?>
    
           	<div class="container mb50">
             	<div class="row"> 
@@ -71,6 +69,6 @@
                     </div>
             	</div>
             </div>
-        <?php endif; ?>
+        <?php endif; ?><!-- /pagination -->
            
 <?php get_footer(); ?>  

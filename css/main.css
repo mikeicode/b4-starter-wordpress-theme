@@ -4406,7 +4406,10 @@ tr { border-bottom: 1px solid #ccc; }
 th, td { padding: 5px 3px; }
 td { vertical-align: top; } */
 /* -----------------------------[ Images ]----------------------------- */
-/* img { max-width:100%; height:auto } */
+img {
+  max-width: 100%;
+  height: auto; }
+
 img.alignleft {
   float: left;
   margin-right: 20px;
@@ -4711,6 +4714,47 @@ blockquote:before {
 .footer-surround {
   width: 100%;
   color: #fff; }
+
+/* main blog landing */
+h2.post-title {
+  font-size: 30px;
+  line-height: 38px; }
+
+section.post-wrap {
+  padding-top: 80px;
+  padding-bottom: 70px; }
+
+section.post-wrap.odd {
+  background-color: #f5f5f0; }
+
+/* pagination */
+#nav-below {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 18px; }
+  #nav-below .pagination-wrap {
+    text-align: center;
+    margin-top: -1px;
+    border-top: 1px solid #b0b0b0;
+    padding-top: 30px; }
+  #nav-below a {
+    margin: 0 15px; }
+  #nav-below .nav-previous {
+    float: right; }
+  #nav-below .nav-next {
+    float: left; }
+  #nav-below i {
+    color: #2f2f2f;
+    position: relative;
+    top: 1px; }
+
+/* category page */
+.category-title {
+  background: #F5F5F0; }
+  .category-title h2 {
+    padding-bottom: 10px;
+    padding-top: 30px;
+    color: #eb2d2e; }
 
 .sf-menu, .sf-menu * {
   margin: 0;
