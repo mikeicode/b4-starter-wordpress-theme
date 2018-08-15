@@ -5,8 +5,11 @@
         </div>
     </footer>
 
+<?php edit_post_link(); ?> 
+
+</div><!-- /#page-wrap -->
                             
-<?php edit_post_link(); ?>                            
+                           
 <?php wp_footer(); ?>
 <?php the_field( 'footer_code', 'option' ); ?>
 </body>

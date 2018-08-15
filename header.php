@@ -37,4 +37,5 @@
 
 <body <?php body_class(); ?>>
 <?php the_field( 'body_code', 'option' ); ?> 
+<div id="page-wrap">
 
