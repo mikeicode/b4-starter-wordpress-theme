@@ -12,12 +12,12 @@
 ?> 
      
     <?php while ( have_posts() ) : the_post(); ?> 
-    <section class="post-wrap  wow fadeIn">
+    <section class="post-wrap">
         <div class="container">
     
                 <div class="row"> 
                 
-                    <div class="col-xs-12 col-sm-4 col-md-5" id="sidebar">
+                    <div class="col-sm-4 col-md-5" id="sidebar">
                     
 						<?php
                             if ( has_post_format( 'video' )) {
@@ -29,7 +29,7 @@
                         
                     </div>
                     
-                    <div class="col-xs-12 col-sm-8 col-md-7">
+                    <div class="col-sm-8 col-md-7">
                         
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             
@@ -55,14 +55,8 @@
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>
         
         	<?php
-		
-				if ($post->post_type == "news") {
-					$linkText = 'News';
-				} elseif ($post->post_type == "events") {
-					$linkText = 'Events';
-				} else {
+				
 					$linkText = 'Posts';
-				}
 		   ?>
    
           	<div class="container mb50">
