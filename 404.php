@@ -6,8 +6,13 @@ get_template_part( 'menu', 'index' ); ?>
         <div class="container">
             <div class="row">
                 <article id="post-<?php the_ID(); ?>" class="col mt50 mb50 align-center">
-                    <?php the_field( '404_page_content', 'option' ); ?>
-                </article>
+                    <?php if ( get_field( '404_page_content', 'option' ) ) {
+							the_field( '404_page_content', 'option' );
+						} else {
+							echo "Sorry, you are looking for something that isnt here.";
+						}
+					?>
+				</article>
             </div>
         </div>
     </section>
