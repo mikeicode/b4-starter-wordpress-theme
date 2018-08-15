@@ -40,8 +40,8 @@ add_action( 'wp_enqueue_scripts', 'load_styles' );
 //-----------------------------------------------------
 
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
-add_image_size( 'banner_image', 933, 9999 ); // New size for ...
+//set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
+add_image_size( 'blog_image_size', 600, 360, true ); //blog images
 
 
 //-----------------------------------------------------

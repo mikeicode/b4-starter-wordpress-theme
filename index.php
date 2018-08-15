@@ -3,68 +3,80 @@
 	get_template_part( 'menu', 'index' );  
 ?>     
      
+  
+<?php if ( is_category() ) {
+		echo'<section class="category-title"><div class="container"><div class="row"><div class="col-xs-12"><h2>';
+		single_cat_title( '', true );
+		echo'</h2></div></div></div></section>';
+	}
+?> 
+     
+    <?php while ( have_posts() ) : the_post(); ?> 
+    <section class="post-wrap  wow fadeIn">
+        <div class="container">
     
-    <div class="container">
-
-        <!-- left and right columns -->
-      	<div class="row"> 
-        
-        <!-- left column -->   	
-        <div class="col-xs-12 col-sm-9">
-        
-        	<!-- echo category name on category archive, blog page title otherwise -->
-        	<p class="blog-title"><?php if ( is_category() ) {
-				single_cat_title( '', true );
-				} else {
-				echo get_the_title( 35 ); // change that to the ID of the main blog page
-				}
-			?> </p>
-        
-			<?php while ( have_posts() ) : the_post(); ?> <!--  the loop -->
-                        
-        	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-          		<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <div class="row"> 
                 
-                	<?php
-                            if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail(17))) {
-                                the_post_thumbnail('gallery_landing_image_size');
-                            }
+                    <div class="col-xs-12 col-sm-4 col-md-5" id="sidebar">
+                    
+						<?php
+                            if ( has_post_format( 'video' )) {
+                              the_field( 'video_link' );
+                            } elseif ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) {
+                                    the_post_thumbnail('blog_image_size');
+                             }
                         ?>
-                
-             
-                        <?php the_excerpt(); ?>
-	 
-             	<!-- the meta-->   
-              	<div class="meta"> 
-                    	Date posted: <?php echo get_the_date(); ?>
-                  	| Author: <?php the_author_posts_link(); ?>
-                  	| <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-                  <p>Categories: <?php the_category(' '); ?></p>
-              	</div><!-- /the meta--> 
-        	</article>
+                        
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-8 col-md-7">
+                        
+                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            
+                            <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                            
+                            <?php the_excerpt(); ?>
+                            
+                            <p><a href="<?php the_permalink(); ?>" class="button read-more">Read More</a></p>
+                 
+                        </article>
+                      
+                    </div>
+                        
+                </div>
+    
+        </div> 
+    </section>
+    
+    <?php endwhile; ?>
+    
 
-			<?php endwhile; ?><!-- /the loop -->
-
-        	<?php /* Display navigation to next/previous pages when applicable */ ?>
-  			<?php if (  $wp_query->max_num_pages > 1 ) : ?>
-				
-                <nav id="nav-below">
-            		<div class="nav-next"><?php previous_posts_link('<i class="fa fa-angle-left"></i> Newer Posts'); ?></div>
-                    <div class="nav-previous"><?php next_posts_link('Previous Posts <i class="fa fa-angle-right"></i>'); ?></div>
-          		</nav><!-- #nav-below -->
-          	
-			<?php endif; ?>
-          
-      	</div><!-- /left column -->
+        <?php /* Display navigation to next/previous pages when applicable */ ?>
+        <?php if (  $wp_query->max_num_pages > 1 ) : ?>
         
-        	<!-- right column sidebar -->
-        	<div class="col-xs-12 col-sm-3" id="sidebar">
-          		<?php get_template_part( 'sidebar' ); ?>
-        	</div><!-- /right column sidebar -->
-        
-      	</div><!-- /left and right columns -->
-
-    </div> <!-- /container -->
+        	<?php
+		
+				if ($post->post_type == "news") {
+					$linkText = 'News';
+				} elseif ($post->post_type == "events") {
+					$linkText = 'Events';
+				} else {
+					$linkText = 'Posts';
+				}
+		   ?>
+   
+          	<div class="container mb50">
+            	<div class="row"> 
+                	<div class="col-xs-12">
+                    	<div class="pagination-wrap">
+                            <nav id="nav-below">
+                                <div class="nav-next"><?php previous_posts_link('<i class="fas fa-long-arrow-alt-left" aria-hidden="true"></i> Newer '. $linkText.''); ?></div>
+                                <div class="nav-previous"><?php next_posts_link('Previous '. $linkText.' <i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>'); ?></div>
+                            </nav><!-- #nav-below -->
+                        </div>
+                    </div>
+            	</div>
+            </div>
+        <?php endif; ?>
            
 <?php get_footer(); ?>  
