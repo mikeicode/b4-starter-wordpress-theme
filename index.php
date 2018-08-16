@@ -12,7 +12,7 @@
 	}
 ?>
 
-<!-- display blog or category title -->
+<!-- dsinisplay blog or category title -->
 <section class="category-title">
 	<div class="container">
 		<div class="row">

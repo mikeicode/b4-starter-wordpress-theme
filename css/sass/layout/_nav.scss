@@ -97,25 +97,49 @@
 
 
 
-/* =============================================================================
-   Mobile Menu
-   ========================================================================== */
-   
-optgroup, optgroup label { font-weight:normal !important; font-style:normal !important;  }
+/* mobile menu */
 
-
-/* styles for desktop */
-.tinynav { display: none }
-#tinynav1 { position:relative; }
-
-/* styles for mobile */
-@media screen and (max-width: 767px) {
-    .tinynav { display: block }
-    #menu-main-nav{ display: none }
+nav.menu {
+    overflow: hidden !important;
 }
 
-#menu-mobile-nav {display:none }
+html {
+  overflow-y: scroll !important;
+}
 
+/* mobile menu button */
+a.mobile-menu-button {
+	background: #F3F3F3;
+	color: #333;
+	font-size: 28px;
+	display: inline-block;
+	width: 45px;
+	height: 45px;
+	padding: 0 5px;
+	text-align: center;
+	margin: 10px;
+	border: 1px solid #DADADA;
+	position: absolute;
+	top:10px;
+	left: 10px;
+	z-index: 2;
+	
+	display: none;
+}
 
+a.mobile-menu-button:hover {
+	color: #111;
+}
+
+/* Choose width for mobile menu */
+
+@media screen and (max-width: 767px) {
+	.menu-main-nav-container { 
+		display: none;
+	}
+	a.mobile-menu-button { 
+		display:block;
+	}
+}
 
 

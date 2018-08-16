@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 	
 /*
 |--------------------------------------------------------------------------
-| Superfish
+| Main Navigation - Superfish plugin
 |--------------------------------------------------------------------------
 |
 |
@@ -26,6 +26,7 @@ jQuery(document).ready(function($) {
 	myTheme.Navigation = function () {
 		
 		$('.menu-main-nav-container ul.sf-menu').superfish({
+			
 		});
 	
 	};
@@ -33,23 +34,7 @@ jQuery(document).ready(function($) {
 
 /*
 |--------------------------------------------------------------------------
-| Search field placeholder text
-|--------------------------------------------------------------------------
-|
-|
-|
-*/		
-
-	myTheme.SearchPlaceholder = function () {
-		
-		$("#s").watermark("Search..");
-	
-	};	
-	
-
-/*
-|--------------------------------------------------------------------------
-| Mobile Nav
+| Mobile Navigation - mmenu plugin
 |--------------------------------------------------------------------------
 |
 |
@@ -58,16 +43,30 @@ jQuery(document).ready(function($) {
 
 	myTheme.MobileNav = function () {
 		
-		$("#menu-mobile-nav").tinyNav({
-  			header: 'Navigation' 
-		});
+		$("nav#menu").mmenu({
+			 "extensions": [
+
+				//"shadow-page",
+				//"shadow-panels",
+				 "multiline",
+				 //"theme-white",
+				 //"theme-dark",
+				 "pagedim-black",
+				 "border-offset",
+				 "position-front"
+			 ],
+
+			//"slidingSubmenus": false,
+			 "iconPanels": true,
+
+		 });
 	
 	};		
 	
 	
 /*
 |--------------------------------------------------------------------------
-| Fitvids Responsive Videos
+| Responsive Videos - Fitvids plugin
 |--------------------------------------------------------------------------
 |
 |
@@ -97,16 +96,13 @@ jQuery(document).ready(function($) {
 
 		// Without trimming white space
 		$('p').filter(function () { return this.innerHTML == "" }).remove();
-		
 	
 	};	
-	
-	
 	
 
 /*
 |--------------------------------------------------------------------------
-| Fancybox
+| Image / content popups - Fancybox plugin
 |--------------------------------------------------------------------------
 |
 |
@@ -114,6 +110,9 @@ jQuery(document).ready(function($) {
 */		
 
 	myTheme.Fancybox = function () {
+		
+		var thumbnails = 'a[href$=".gif"],a[href$=".jpg"],a[href$=".jpeg"],a[href$=".png"],a[href$=".GIF"],a[href$=".JPG"],a[href$=".JPEG"],a[href$=".PNG"]';
+		$(thumbnails).addClass("popup");
 		
 		$(".popup").fancybox({
 			maxWidth	: 900,
@@ -126,19 +125,13 @@ jQuery(document).ready(function($) {
 			openEffect	: 'elastic',
 			closeEffect	: 'none'
 		});
-		
-		
-		
-		var thumbnails = 'a[href$=".gif"],a[href$=".jpg"],a[href$=".jpeg"],a[href$=".png"],a[href$=".GIF"],a[href$=".JPG"],a[href$=".JPEG"],a[href$=".PNG"]';
-		$(thumbnails).addClass("fancybox");
-		$('.fancybox').fancybox();
-	
+			
 	};
 
 
 /*
 |--------------------------------------------------------------------------
-| isotope
+| isotope plugin
 |--------------------------------------------------------------------------
 |
 |
@@ -188,7 +181,7 @@ jQuery(document).ready(function($) {
 	
 /*
 |--------------------------------------------------------------------------
-| Same height columns
+| Same height columns - matchheight plugin
 |--------------------------------------------------------------------------
 |
 |
@@ -196,31 +189,7 @@ jQuery(document).ready(function($) {
 */	
 	
 	  myTheme.Matchheight = function () {
-		  $('.matchheight').matchHeight();
-		  $('.footer-col').matchHeight();
-		  
-		  
-		  $("nav#menu").mmenu({
-				 "extensions": [
-					 
-					//"shadow-page",
-					//"shadow-panels",
-					 "multiline",
-					 //"theme-white",
-					 //"theme-dark",
-					 "pagedim-black",
-					 "border-offset",
-					 "position-front"
-				 ],
-			  	
-			  	//"slidingSubmenus": false,
-				 "iconPanels": true,
-			  
-			  
-			  
-			  });
-		  
-		  
+		  $('.matchheight').matchHeight();		  
 	  };
 	
 
@@ -234,7 +203,6 @@ jQuery(document).ready(function($) {
 */
 
 	myTheme.Navigation();
-	myTheme.SearchPlaceholder();
 	myTheme.MobileNav();
 	myTheme.FitVids();
 	myTheme.TrimP();

@@ -29,8 +29,6 @@
     <![endif]-->
 
 <?php wp_head(); ?>  
-</head>
-
 <?php the_field( 'header_code', 'option' ); ?>   
 </head>
 
