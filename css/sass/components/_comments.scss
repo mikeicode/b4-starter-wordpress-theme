@@ -1,5 +1,6 @@
 ol.commentlist {
-	margin-left: 0px
+	margin-left: 0px;
+	padding-left: 0;
 }
 .commentlist li {
 	position: relative;
@@ -23,24 +24,24 @@ ol.commentlist {
 	margin-top: 0;
 }
 .commentlist li.depth-2 {
-	margin-left: 20px !important;
+	margin-left: 0px !important;
 	margin-right: 0px !important;
 	margin-top: 0;
-	margin-bottom: 5px !important;
+	margin-bottom: 10px !important;
 	background-color: rgba(245, 245, 245, 0.5);
 }
 .commentlist li.depth-3 {
-	margin-left: 20px !important;
+	margin-left: 0px !important;
 	margin-right: 0px !important;
 	margin-top: 0;
-	margin-bottom: 5px !important;
+	margin-bottom: 10px !important;
 	background-color: rgba(245, 245, 245, 0.5);
 }
 .commentlist li.depth-4 {
-	margin-left: 20px !important;
+	margin-left: 0px !important;
 	margin-right: 0px !important;
 	margin-top: 0;
-	margin-bottom: 5px !important;
+	margin-bottom: 10px !important;
 	background-color: rgba(245, 245, 245, 0.5);
 }
 .commentlist li:not(.depth-1) {
@@ -86,18 +87,18 @@ ol.commentlist {
 .commentlist .comment-reply-link {
 	text-decoration: none;
 	float: right;
-	background: #363636;
-	padding: 3px 5px;
+	background: $button-color;
+	padding: 3px 10px;
 	color: #fff;
 	margin-bottom: 10px;
-	font-size: 13px;
+	font-size: 14px;
 	text-transform: uppercase
 }
 .commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
-	opacity: 0.9;
+	background: $button-roll;
 }
 .comment-form-comment label {
-	display: block
+	display: block;
 }
 textarea#comment {
 	width: 100%;
@@ -105,31 +106,28 @@ textarea#comment {
 }
 h3#reply-title, h2#comments-title {
 	border-bottom: 1px solid #cacaca;
-	font-size: 18px;
-	line-height: 22px;
+	font-size: 24px;
+	line-height: 28px;
 	margin-bottom: 25px;
 	padding-bottom: 10px;
 	text-transform: uppercase;
-}
-#comments {
-	padding-top: 20px
-}
-.comment-meta {
-	margin-left: 61px;
-	margin-bottom: 20px
 }
 .comment-form-url {
 	display: none
 }
 
 #comments {
+	padding-top: 20px;
 
-	.comment-author, .comment-meta {
-		padding-left:60px;
-	}
-	
 	.comment-meta {
+		margin-left: 61px;
+		margin-bottom: 20px;
 		margin-bottom:20px;
 	}
 
 }
+
+.form-submit input#submit {
+	padding:12px 25px 7px 25px;
+}
+
