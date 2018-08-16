@@ -2,14 +2,26 @@
  	get_header();
 	get_template_part( 'menu', 'index' );  
 ?>     
-     
-  
-<?php if ( is_category() ) {
-		echo'<section class="category-title"><div class="container"><div class="row"><div class="col-xs-12"><h2>';
-		single_cat_title( '', true );
-		echo'</h2></div></div></div></section>';
+
+<?php
+	/* store blog or category title */
+	if ( is_home() ) {
+	  	$blogTitle = get_the_title( get_option('page_for_posts') );
+	} elseif ( is_category() )  {
+		$blogTitle = single_cat_title( '', false );
 	}
-?> 
+?>
+
+<!-- display blog or category title -->
+<section class="category-title">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2><?php echo $blogTitle ?></h2>
+			</div>
+		</div>
+	</div>
+</section><!-- /display blog or category title -->
 
 
     <?php while ( have_posts() ) : the_post(); ?> 
@@ -17,11 +29,11 @@
 	<?php
 		/* column width based on featured image / video */ 
 		if ( has_post_format( 'video' )) {
-			$leftClasses = 'col-sm-4 col-md-5';
-			$rightClasses = 'col-sm-8 col-md-7';
+			$leftClasses = 'col-md-5';
+			$rightClasses = 'col-md-7';
 		} elseif ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) {
-			$leftClasses = 'col-sm-4 col-md-5';
-			$rightClasses = 'col-sm-8 col-md-7';
+			$leftClasses = 'col-md-5';
+			$rightClasses = 'col-md-7';
 		} else {
 			$leftClasses = '';
 			$rightClasses = 'col';
