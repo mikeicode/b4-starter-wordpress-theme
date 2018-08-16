@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 
 	myTheme.Navigation = function () {
 		
-		$('#menu-main-nav').superfish({
+		$('.menu-main-nav-container ul.sf-menu').superfish({
 		});
 	
 	};
@@ -198,6 +198,29 @@ jQuery(document).ready(function($) {
 	  myTheme.Matchheight = function () {
 		  $('.matchheight').matchHeight();
 		  $('.footer-col').matchHeight();
+		  
+		  
+		  $("nav#menu").mmenu({
+				 "extensions": [
+					 
+					//"shadow-page",
+					//"shadow-panels",
+					 "multiline",
+					 //"theme-white",
+					 //"theme-dark",
+					 "pagedim-black",
+					 "border-offset",
+					 "position-front"
+				 ],
+			  	
+			  	//"slidingSubmenus": false,
+				 "iconPanels": true,
+			  
+			  
+			  
+			  });
+		  
+		  
 	  };
 	
 
