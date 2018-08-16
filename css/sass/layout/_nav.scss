@@ -66,31 +66,31 @@
 /* current links */
 
 .sf-menu li.current-menu-item a {
-	color: #C4DAEF;
+	color: $link-roll;
 }
 
 .sf-menu li.current-menu-item li a {
-	color: #fff;
+	color: $link-color;
 }
 
 .sf-menu li.current-menu-item li a:hover {
-	color: #C4DAEF;
+	color: $link-roll;
 }
 
 .sf-menu li.current-menu-item li a {
-	color: #fff;
+	color: $link-color;
 }
 
 .sf-menu li.current-menu-parent a {
-	color: #C4DAEF;
+	color: $link-roll;
 }
 
 .sf-menu li.current-menu-parent li a {
-	color: #fff;
+	color: $link-color;
 }
 
 .sf-menu li.current-menu-parent li a:hover {
-	color: #C4DAEF;
+	color: $link-roll;
 }
 
 
@@ -99,12 +99,12 @@
 
 /* mobile menu */
 
-nav.menu {
-    overflow: hidden !important;
-}
-
 html {
   overflow-y: scroll !important;
+}
+nav#mobile-menu {
+	display: none;
+	overflow: hidden !important;
 }
 
 /* mobile menu button */
@@ -132,13 +132,16 @@ a.mobile-menu-button:hover {
 }
 
 /* Choose width for mobile menu */
-
+	
 @media screen and (max-width: 767px) {
 	.menu-main-nav-container { 
 		display: none;
 	}
 	a.mobile-menu-button { 
 		display:block;
+	}
+	nav#mobile-menu {
+		display: block;
 	}
 }
 

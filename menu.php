@@ -1,8 +1,8 @@
 
 
-<a class="mobile-menu-button" href="#menu"><i class="fas fa-bars"></i></a>
+<a class="mobile-menu-button" href="#mobile-menu"><i class="fas fa-bars"></i></a>
 
-<nav id="menu">
+<nav id="mobile-menu">
 	<?php /* mobile nav */ wp_nav_menu( array( 'theme_location' => 'mobile-menu') ); ?>
 </nav>
 

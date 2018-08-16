@@ -43,7 +43,7 @@ jQuery(document).ready(function($) {
 
 	myTheme.MobileNav = function () {
 		
-		$("nav#menu").mmenu({
+		$("nav#mobile-menu").mmenu({
 			 "extensions": [
 
 				//"shadow-page",
