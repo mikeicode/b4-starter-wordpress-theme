@@ -1,7 +1,9 @@
 <?php
  	get_header();
-	get_template_part( 'menu', 'index' );  
-?>     
+	get_template_part( 'menu', 'index' ); 
+	get_template_part( 'inc/parts/banner' );
+?>
+
 
 <?php
 	/* store blog or category title */
@@ -12,7 +14,7 @@
 	}
 ?>
 
-<!-- dsinisplay blog or category title -->
+<!-- display blog or category title -->
 <section class="category-title">
 	<div class="container">
 		<div class="row">

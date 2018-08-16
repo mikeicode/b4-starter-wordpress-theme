@@ -18,14 +18,12 @@ body, input, textarea {
    ========================================================================== */
 
 /* Vertical Styles */
-.entry-meta { margin-bottom: 10px; }
 p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .gallery-row, .comment-list ul, .comment-list ol { margin-bottom: 20px; }
 .hentry, .widget, .comment, .navigation-links { margin-bottom: 40px; }
 
 /* Lists */
 ul, ol { margin-left: 2em; }
 ol { list-style-type: decimal; }
-nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
 
 /* Text Elements */
 address { font-style: italic; }
@@ -38,8 +36,6 @@ a:hover { color: $link-roll; text-decoration: none; }
 /* Headings */
 h1, h2, h3, h4, h5, h6 { font-weight: $main-heading-weight; font-family: $heading-font; margin-bottom:15px }
 
-
-h1, h2, h3, h4, h5, h6 {  }
 h1 { font-size: 34px; line-height: 38px; padding: 5px 0px; }
 h2 { font-size: 28px; line-height: 32px; padding: 5px 0px; }
 h3 { font-size: 24px; line-height: 28px; padding: 5px 0px; }
@@ -49,26 +45,29 @@ h6 { font-size: 12px; line-height: 18px; padding: 5px 0px; }
 
 strong { font-weight: $main-strong-weight; font-family: $heading-font; }
 
-/* Blockquote */
+/* blockquote */
+
 blockquote {
-	font-size:16px; 
-	border-left:2px dashed #999; 
-	padding:18px 0 1px 20px;
-	margin-left:3px; 
-	margin-bottom:40px;
-	
-		em {
-			font-size:14px;
-		}
+  margin:50px auto;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 1.2em 60px;
+  border-left:8px solid $link-color;
+  line-height:1.6;
+  position: relative;
+  background:#EDEDED;
 }
 
-blockquote:before {
-	color: $link-color;
-	font-size: 32px;
-	line-height: 0.5em;
-	margin-right: 0.27em;
-	content: "\f10d";
-    font-family: FontAwesome;
-	float:left
+blockquote::before {
+  font-family:Arial;
+  content: "\201C";
+  color: $link-color;
+  font-size:5em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
 }
 
+blockquote::after{
+  content: '';
+}

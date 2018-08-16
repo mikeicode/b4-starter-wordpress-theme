@@ -48,7 +48,10 @@ add_action( 'wp_enqueue_scripts', 'load_styles' );
 
 add_theme_support( 'post-thumbnails' );
 //set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
+add_image_size( 'banner_image_size', 1600, 445, true ); //banner image
 add_image_size( 'blog_image_size', 600, 360, true ); //blog images
+add_image_size( 'acf_full_height_display_size', 200, 9999, false ); //used to display images in advanced custom fields
+add_image_size( 'acf_full_width_display_size', 9999, 200, false ); //used to display images in advanced custom fields
 
 
 //-----------------------------------------------------
@@ -64,9 +67,6 @@ function my_custom_menus() {
         )
     );
 }
-
-//<?php wp_nav_menu (array('theme_location' => 'primary-menu','menu_class' => 'nav')); ? > //
-//<?php wp_nav_menu (array('theme_location' => 'secondary-menu','menu_class' => 'nav')); ? > // 
 
 
 //-----------------------------------------------------
@@ -427,6 +427,12 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Footer Settings',
 		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Banner Settings',
+		'menu_title'	=> 'Banner',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 	

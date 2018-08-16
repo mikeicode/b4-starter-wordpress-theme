@@ -7065,9 +7065,6 @@ body, input, textarea {
    Main Elements
    ========================================================================== */
 /* Vertical Styles */
-.entry-meta {
-  margin-bottom: 10px; }
-
 p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .gallery-row, .comment-list ul, .comment-list ol {
   margin-bottom: 20px; }
 
@@ -7080,11 +7077,6 @@ ul, ol {
 
 ol {
   list-style-type: decimal; }
-
-nav ul, nav li {
-  margin: 0;
-  list-style: none;
-  list-style-image: none; }
 
 /* Text Elements */
 address {
@@ -7142,24 +7134,28 @@ strong {
   font-weight: 500;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* Blockquote */
+/* blockquote */
 blockquote {
-  font-size: 16px;
-  border-left: 2px dashed #999;
-  padding: 18px 0 1px 20px;
-  margin-left: 3px;
-  margin-bottom: 40px; }
-  blockquote em {
-    font-size: 14px; }
+  margin: 50px auto;
+  font-style: italic;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 60px;
+  border-left: 8px solid #339af0;
+  line-height: 1.6;
+  position: relative;
+  background: #EDEDED; }
 
-blockquote:before {
+blockquote::before {
+  font-family: Arial;
+  content: "\201C";
   color: #339af0;
-  font-size: 32px;
-  line-height: 0.5em;
-  margin-right: 0.27em;
-  content: "\f10d";
-  font-family: FontAwesome;
-  float: left; }
+  font-size: 5em;
+  position: absolute;
+  left: 10px;
+  top: -10px; }
+
+blockquote::after {
+  content: ''; }
 
 .mt0 {
   margin-top: 0px !important; }

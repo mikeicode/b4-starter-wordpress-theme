@@ -1,12 +1,13 @@
 <?php
  	get_header();
-	get_template_part( 'menu', 'index' );  
-?>      
+	get_template_part( 'menu', 'index' ); 
+	get_template_part( 'inc/parts/banner' );
+?>  
     
     <div class="container">
       	<div class="row"> 
 			<div class="col">
-				<?php while ( have_posts() ) : the_post(); ?> <!--  the loop -->
+				<?php while ( have_posts() ) : the_post(); ?><!--  the loop -->
 
 					<article id="post-<?php the_ID(); ?>">
 						<h1 class="post-title"><?php the_title(); ?></h1>
@@ -24,7 +25,7 @@
 
 				<?php endwhile; ?><!-- /the loop -->
 			</div>
-      	</div><!-- /row -->
-    </div><!-- /container -->
+      	</div><!-- /.row -->
+    </div><!-- /.container -->
            
 <?php get_footer(); ?>  

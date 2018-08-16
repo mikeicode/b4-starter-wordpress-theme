@@ -9,7 +9,7 @@
 <section class="header-surround">
 	<header class="container">   
           <div class="row"> 
-              <div class="col col-sm-3">
+              <div class="col-sm">
                   	<?php $site_logo = get_field( 'site_logo', 'option' ); ?>
 					<?php if ( $site_logo ) { ?>
 						<a href="<?php echo esc_url( home_url() ); ?>">
@@ -17,7 +17,7 @@
 						</a>
 					<?php } ?>
               </div>
-              <div class="col col-sm-9">
+              <div class="col-sm">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary-menu' , 'menu_class' => 'sf-menu') ); ?>
               </div>
           </div> 
