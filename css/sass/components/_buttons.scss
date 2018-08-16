@@ -11,8 +11,11 @@ a.button:visited, button:visited, input[type="submit"]:visited, input[type="rese
 	position: relative;
 	border-radius: 4px;
 	background: $button-color;
+	border-bottom:1px solid darken($button-color, 10%) !important;
 
 }
+
+
 
 a.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover { 
 	

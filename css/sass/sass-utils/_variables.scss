@@ -16,12 +16,12 @@ $main-text-color: #444;
 
 /*-- links/buttons --*/
 
-$link-color: blue;
-$link-roll: lighten($link-color, 5%);
+$link-color: #339af0;
+$link-roll: darken($link-color, 5%);
 
-$button-color: #4d4d4d;
-$button-roll: lighten($button-color, 5%);
-$button-active: lighten($button-color, 10%);
+$button-color: #12b886;
+$button-roll: darken($button-color, 5%);
+$button-active: darken($button-color, 10%);
 
 /*-- styling --*/
 
