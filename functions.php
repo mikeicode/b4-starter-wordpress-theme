@@ -152,9 +152,16 @@ add_action('wp_before_admin_bar_render', 'site_admin_bar_remove', 0);
 //----------------------------------------------------- 
  
 function custom_loginlogo() {
-echo '<style type="text/css">
-.login h1 a  {background-image: url('.get_bloginfo('template_directory').'/images/admin-logo.jpg) !important;
-    background-size: 320px 80px !important; width:320px !important; height:80px !important }
+	// get logo from theme options ACF
+	$admin_screen_login_logo = get_field( 'admin_screen_login_logo', 'option' );
+
+echo '<style>
+.login h1 a {
+		background-image: url('. $admin_screen_login_logo['url'] .') !important;
+		width:320px !important; 
+		height:150px !important;
+		background-size: contain !important; 
+	}
 </style>';
 }
 add_action('login_head', 'custom_loginlogo');
@@ -168,7 +175,7 @@ function custom_loginlogo_url($url) {
 //----------------------------------------------------- 
 
 function remove_footer_admin () {
-echo 'Fueled by <a href="http://www.wordpress.org" target="_blank">WordPress</a> | Website by <a href="http://sonoradesignworks.com" target="_blank">Sonora DesignWorks</a></p>';
+echo 'Fueled by <a href="http://www.wordpress.org" target="_blank">WordPress</a> | Website by <a href="https://sonoradesignworks.com" target="_blank">Sonora DesignWorks</a></p>';
     }
 
 add_filter('admin_footer_text', 'remove_footer_admin'); 
