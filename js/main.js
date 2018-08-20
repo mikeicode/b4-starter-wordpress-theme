@@ -123,7 +123,7 @@ jQuery(document).ready(function($) {
 			autoSize	: false,
 			closeClick	: false,
 			openEffect	: 'elastic',
-			closeEffect	: 'none'
+			closeEffect	: 'fade'
 		});
 			
 	};

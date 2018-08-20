@@ -185,7 +185,6 @@ add_filter('admin_footer_text', 'remove_footer_admin');
 // Disable things not needed for this specific theme
 //======================================================================
 
-
 //-----------------------------------------------------
 // Remove Tags support for Posts
 //----------------------------------------------------- 
@@ -321,7 +320,7 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 //-----------------------------------------------------
 // Set fonts
 //-----------------------------------------------------
-
+/*
 if ( ! function_exists( 'wpex_mce_google_fonts_array' ) ) {
 	function wpex_mce_google_fonts_array( $initArray ) {
 	    $initArray['font_formats'] = 'Arial=arial,helvetica,sans-serif;latohairline=latohairline;latothin=latothin;latolight=latolight;latoregular=latoregular;latomedium=latomedium;latosemibold=latosemibold;latobold=latobold;latoheavy=latoheavy;latoblack=latoblack;';
@@ -329,10 +328,15 @@ if ( ! function_exists( 'wpex_mce_google_fonts_array' ) ) {
 	}
 }
 add_filter( 'tiny_mce_before_init', 'wpex_mce_google_fonts_array' );
+*/
 
 //======================================================================
-// Fix Gravity Form Tabindex Conflicts
+// Gravity Forms
 //======================================================================
+
+//-----------------------------------------------------
+// Fix Gravity Form Tabindex Conflicts
+//-----------------------------------------------------
 
 add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
 function gform_tabindexer( $tab_index, $form = false ) {
@@ -342,72 +346,32 @@ function gform_tabindexer( $tab_index, $form = false ) {
     return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
 }
 
+//-----------------------------------------------------
+// Hide labels on Gravity forms when using placeholders
+//-----------------------------------------------------
+
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
+//-----------------------------------------------------
+// Stop Gravity Forms jumping on submit
+//-----------------------------------------------------
+
+// (single form - replace _1 with form ID) add_filter( 'gform_confirmation_anchor_1', '__return_false' );
+// (disable sitewide) add_filter( 'gform_confirmation_anchor', '__return_false' );
+
+//======================================================================
+// Advanced Custom Fields
+//======================================================================
 
 //-----------------------------------------------------
 // Hide ACF field group menu item
 //-----------------------------------------------------
+
 //add_filter('acf/settings/show_admin', '__return_false');
 
 //-----------------------------------------------------
 // Theme Options
 //-----------------------------------------------------
-
-
-if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> '404 Page Settings',
-		'menu_title'	=> '404 Page',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Header Settings',
-		'menu_title'	=> 'Header',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Footer Settings',
-		'menu_title'	=> 'Footer',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-	
-			
-}
-
-//======================================================================
-// Include PHP file in Content using [shortcode] 
-//======================================================================
-
-function include_file($atts) {
-     $a = shortcode_atts( array(
-        'slug' => 'NULL',
-       ), $atts );
-
-      if($slug != 'NULL'){
-        ob_start();
-        get_template_part($a['slug']);
-        return ob_get_clean();
-      }
- }
- add_shortcode('include', 'include_file');
-
-
-
-
-//-----------------------------------------------------
-// Theme Options
-//-----------------------------------------------------
-
 
 if( function_exists('acf_add_options_page') ) {
 	
@@ -447,8 +411,32 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 //======================================================================
-// Video post type
+// Include PHP file in Content using [shortcode] 
 //======================================================================
+
+function include_file($atts) {
+     $a = shortcode_atts( array(
+        'slug' => 'NULL',
+       ), $atts );
+
+      if($slug != 'NULL'){
+        ob_start();
+        get_template_part($a['slug']);
+        return ob_get_clean();
+      }
+ }
+ add_shortcode('include', 'include_file');
+
+//======================================================================
+// Blog Post Types
+//======================================================================
+
+//-----------------------------------------------------
+// Add Video post type
+//-----------------------------------------------------
+
 add_theme_support( 'post-formats', array( 'video' ) );
+
+
 
 ?>
