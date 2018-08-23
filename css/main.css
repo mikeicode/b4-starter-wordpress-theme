@@ -8029,25 +8029,44 @@ section.post-wrap.odd {
   background-color: #f5f5f0; }
 
 /* pagination */
-#nav-below {
-  display: inline-block;
-  margin: 0 auto;
-  font-size: 18px; }
-  #nav-below .pagination-wrap {
-    text-align: center;
-    margin-top: -1px;
-    border-top: 1px solid #b0b0b0;
-    padding-top: 30px; }
-  #nav-below a {
-    margin: 0 15px; }
-  #nav-below .nav-previous {
-    float: right; }
-  #nav-below .nav-next {
-    float: left; }
-  #nav-below i {
-    color: #2f2f2f;
-    position: relative;
-    top: 1px; }
+.pagination-wrap {
+  text-align: center;
+  margin-top: -1px;
+  border-top: 1px solid #eee;
+  padding-top: 30px; }
+  .pagination-wrap nav {
+    display: block;
+    width: 100%; }
+    .pagination-wrap nav i {
+      color: #2f2f2f;
+      position: relative;
+      top: 1px;
+      position: relative; }
+    .pagination-wrap nav .nav-previous {
+      float: right; }
+      .pagination-wrap nav .nav-previous a.button i {
+        left: 2px; }
+      .pagination-wrap nav .nav-previous a.button:hover i {
+        left: 3px; }
+    .pagination-wrap nav .nav-next {
+      float: left; }
+      .pagination-wrap nav .nav-next a.button i {
+        right: 2px; }
+      .pagination-wrap nav .nav-next a.button:hover i {
+        right: 3px; }
+    @media (max-width: 575px) {
+      .pagination-wrap nav .nav-previous,
+      .pagination-wrap nav .nav-next {
+        width: 100%;
+        float: none;
+        margin-bottom: 5px; }
+        .pagination-wrap nav .nav-previous a.button,
+        .pagination-wrap nav .nav-next a.button {
+          width: 100%; }
+      .pagination-wrap nav .nav-previous a.button {
+        text-align: right; }
+      .pagination-wrap nav .nav-next a.button {
+        text-align: left; } }
 
 /* category page */
 .category-title {

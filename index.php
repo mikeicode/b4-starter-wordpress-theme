@@ -80,7 +80,7 @@
    
           	<div class="container mb50">
             	<div class="row"> 
-                	<div class="col-xs-12">
+                	<div class="col-sm">
                     	<div class="pagination-wrap">
                             <nav id="nav-below">
                                 <div class="nav-next"><?php previous_posts_link('<i class="fas fa-long-arrow-alt-left" aria-hidden="true"></i> Newer '. $linkText.''); ?></div>

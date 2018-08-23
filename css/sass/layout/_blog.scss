@@ -17,34 +17,64 @@ section.post-wrap.odd {
 
 /* pagination */
 
-#nav-below {
+.pagination-wrap {
+	text-align:center;
+	margin-top: -1px;	
+	border-top: 1px solid #eee;
+	padding-top: 30px;
 	
-	display:inline-block;
-	margin:0 auto;
-	font-size: 18px;
-	
-		.pagination-wrap {
-			text-align:center;
-			margin-top: -1px;	
-			border-top: 1px solid #b0b0b0;
-			padding-top: 30px;
-		}
-	
-		a {
-			margin:0 15px;	
-		}
-		
-		.nav-previous {
-			float: right
-		}
-		.nav-next {
-			float: left
-		}
-	
-		i {
-			color:#2f2f2f;
-			position:relative;
-			top:1px;
+		nav {
+			
+			display:block;
+			width:100%;
+			
+				i {
+					color:#2f2f2f;
+					position:relative;
+					top:1px;
+					position:relative;
+				}
+
+				.nav-previous {
+					float: right;
+					
+						a.button i {
+							left:2px;
+						}
+					
+						a.button:hover i {
+							left:3px;
+						}
+
+				}
+				.nav-next {
+					float: left;
+					
+						a.button i {
+							right:2px;
+						}
+						
+						a.button:hover i {
+							right:3px;
+						}
+				}
+			
+			@media (max-width: 575px) { 
+				.nav-previous,
+				.nav-next {
+					width:100%;
+					float:none;
+					margin-bottom: 5px;
+					
+						a.button {
+							width:100%;
+						}
+				}
+				
+				.nav-previous a.button {text-align:right}
+				.nav-next a.button {text-align:left}
+			}
+
 		}
 }
 
@@ -59,7 +89,3 @@ section.post-wrap.odd {
 			padding-top:30px;
 		}
 }
-
-
-
-
