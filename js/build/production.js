@@ -1183,6 +1183,19 @@ jQuery(document).ready(function($) {
 		  $('.matchheight').matchHeight();		  
 	  };
 	
+/*
+|--------------------------------------------------------------------------
+| Zebra stripe for blog
+|--------------------------------------------------------------------------
+|
+|
+|
+*/	
+	
+	  myTheme.Zebra = function () {
+		  $("section.post-wrap:odd").addClass("odd");
+	  };
+	
 
 /*
 |--------------------------------------------------------------------------
@@ -1201,6 +1214,7 @@ jQuery(document).ready(function($) {
 	myTheme.Isotope();
 	myTheme.Isotope2();
 	myTheme.Matchheight();
+	myTheme.Zebra();
 	
 	
 

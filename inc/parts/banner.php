@@ -97,6 +97,7 @@
 <?php /* don't show banner on homepage */ if ( !is_front_page() ) { ?>
 
 	<section class="banner-section" style="background:url('<?php echo $banner_image_URL ?>')">
+		<div class="trans-overlay"></div>
 		<div class="container">
 			<div class="row"> 
 				<div class="col">
