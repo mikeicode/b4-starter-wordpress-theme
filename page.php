@@ -4,7 +4,7 @@
 	get_template_part( 'inc/parts/banner' );
 ?>  
     
-    <?php while ( have_posts() ) : the_post(); ?> <!--  the loop -->
+    <?php while ( have_posts() ) : the_post(); ?><!--  the loop -->
     
 		<?php /* display only if the default WP editor has content */
 			$thecontent = get_the_content();
@@ -14,7 +14,7 @@
 				<div class="container">
 					<div class="row">
 
-						<article id="post-<?php the_ID(); ?>" class="col col-sm-12">
+						<article id="post-<?php the_ID(); ?>" class="col-sm-12">
 							<?php the_content(); ?>
 						</article>
 
