@@ -47,6 +47,7 @@ section.post-wrap.odd {
 						}
 
 				}
+			
 				.nav-next {
 					float: left;
 					
@@ -60,8 +61,7 @@ section.post-wrap.odd {
 				}
 			
 			@media (max-width: 575px) { 
-				.nav-previous,
-				.nav-next {
+				.nav-previous, .nav-next {
 					width:100%;
 					float:none;
 					margin-bottom: 5px;
@@ -71,8 +71,13 @@ section.post-wrap.odd {
 						}
 				}
 				
-				.nav-previous a.button {text-align:right}
-				.nav-next a.button {text-align:left}
+				.nav-previous a.button {
+					text-align:right;
+				}
+				
+				.nav-next a.button {
+					text-align:left;
+				}
 			}
 
 		}

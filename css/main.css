@@ -8055,13 +8055,11 @@ section.post-wrap.odd {
       .pagination-wrap nav .nav-next a.button:hover i {
         right: 3px; }
     @media (max-width: 575px) {
-      .pagination-wrap nav .nav-previous,
-      .pagination-wrap nav .nav-next {
+      .pagination-wrap nav .nav-previous, .pagination-wrap nav .nav-next {
         width: 100%;
         float: none;
         margin-bottom: 5px; }
-        .pagination-wrap nav .nav-previous a.button,
-        .pagination-wrap nav .nav-next a.button {
+        .pagination-wrap nav .nav-previous a.button, .pagination-wrap nav .nav-next a.button {
           width: 100%; }
       .pagination-wrap nav .nav-previous a.button {
         text-align: right; }
