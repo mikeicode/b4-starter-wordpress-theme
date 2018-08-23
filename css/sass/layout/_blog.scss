@@ -9,6 +9,11 @@ h2.post-title {
 section.post-wrap {
 	padding-top:80px;
 	padding-bottom:70px;	
+	
+		@media only screen and (max-width: 767px) {
+			padding-top:40px;
+			padding-bottom:0px;
+		}
 }
 
 section.post-wrap.odd {
