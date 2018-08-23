@@ -71,9 +71,9 @@
     
     <?php endwhile; ?>
 
-		<!-- pagination -->
+		
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-        
+        	<!-- pagination -->
         	<?php
 				$linkText = 'Posts';
 		   	?>
@@ -90,6 +90,7 @@
                     </div>
             	</div>
             </div>
-        <?php endif; ?><!-- /pagination -->
+			<!-- /pagination -->
+        <?php endif; ?>
            
 <?php get_footer(); ?>  
