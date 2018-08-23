@@ -8262,6 +8262,21 @@ ul.search-list li {
 .main-404 p {
   font-size: 18px; }
 
+.banner-section {
+  min-height: 400px;
+  background-position: center center !important;
+  background-size: cover !important;
+  color: #fff; }
+  .banner-section .banner-text {
+    margin-top: 140px; }
+    .banner-section .banner-text h1 {
+      font-weight: 400;
+      color: #fff;
+      font-size: 52px;
+      line-height: 60px; }
+    .banner-section .banner-text .banner-sub-head {
+      color: #b7b7b7; }
+
 /* Components */
 ol.commentlist {
   margin-left: 0px;
@@ -8579,6 +8594,15 @@ dl.gallery-item img {
   font-size: 16px; }
 
 /* Pages */
+/* Modules */
+section.copy-section {
+  padding-top: 80px;
+  padding-bottom: 80px; }
+  @media only screen and (max-width: 767px) {
+    section.copy-section {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+
 /* Shame */
 /* add CSS to be cleaned up and put in the correct files later */
 /* =============================================================================

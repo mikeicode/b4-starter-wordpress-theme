@@ -1,0 +1,23 @@
+
+.banner-section {
+	min-height: 400px;
+	background-position: center center !important;
+	background-size:cover !important;
+	color:#fff;
+	
+		.banner-text {
+			margin-top: 140px;
+			
+				h1 {
+					font-weight: 400;
+					color: #fff;
+					font-size: 52px;
+					line-height: 60px;
+				}
+			
+				.banner-sub-head {
+					color:#b7b7b7;
+				}
+		}		
+	
+}

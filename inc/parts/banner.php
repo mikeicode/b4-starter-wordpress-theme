@@ -96,7 +96,7 @@
 
 <?php /* don't show banner on homepage */ if ( !is_front_page() ) { ?>
 
-	<section class="banner-section" style="background:url('<?php echo $banner_image_URL ?>'); background-size:cover;">
+	<section class="banner-section" style="background:url('<?php echo $banner_image_URL ?>')">
 		<div class="container">
 			<div class="row"> 
 				<div class="col">

@@ -33,6 +33,7 @@
 @import "sass/layout/forms";
 @import "sass/layout/search";
 @import "sass/layout/error404";
+@import "sass/layout/banner";
 
 
 /* Components */
@@ -45,6 +46,10 @@
 
 /* Pages */
 @import "sass/pages/home";
+
+
+/* Modules */
+@import "sass/modules/copy";
 
 
 /* Shame */
