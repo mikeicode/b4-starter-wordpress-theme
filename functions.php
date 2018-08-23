@@ -7,7 +7,7 @@
 get_template_part( 'inc/custom-fields' );
 
 //======================================================================
-// Register and Load Scripts and Stylesheets
+// Load CSS and JS
 //====================================================================== 
 
 function add_theme_scripts() {
@@ -27,9 +27,9 @@ add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 // Register Fun Things
 //====================================================================== 
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Register and set post thumbnail sizes
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 add_theme_support( 'post-thumbnails' );
 //set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
@@ -39,24 +39,24 @@ add_image_size( 'acf_full_height_display_size', 200, 9999, false ); //used to di
 add_image_size( 'acf_full_width_display_size', 9999, 200, false ); //used to display images in advanced custom fields
 
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Register Navigations
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
-add_action( 'init', 'my_custom_menus' );
-function my_custom_menus() {
-    register_nav_menus(
-        array(
-            'primary-menu' => __( 'Primary Menu' ),
+function add_theme_menus() {
+	register_nav_menus(
+		array(
+			'primary-menu' => __( 'Primary Menu' ),
 			'mobile-menu' => __( 'Mobile Menu' )
-        )
-    );
+		)
+	);
 }
+add_action( 'init', 'add_theme_menus' );
 
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Register Widget Areas
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 //widget support for a right sidebar
 /*
@@ -76,50 +76,51 @@ register_sidebar(array(
 // Setup things WordPress should do by default
 //======================================================================
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Allow shortcodes in widgets
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 add_filter('widget_text', 'do_shortcode');
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Remove Generator for Security
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 remove_action( 'wp_head', 'wp_generator' );
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Change wordpress howdy text
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
-add_action( 'admin_bar_menu', 'wp_admin_bar_my_custom_account_menu', 11 );
+add_action('admin_bar_menu', 'wp_admin_bar_my_custom_account_menu', 11);
 
-function wp_admin_bar_my_custom_account_menu( $wp_admin_bar ) {
-$user_id = get_current_user_id();
-$current_user = wp_get_current_user();
-$profile_url = get_edit_profile_url( $user_id );
+function wp_admin_bar_my_custom_account_menu($wp_admin_bar)
+	{
+	$user_id = get_current_user_id();
+	$current_user = wp_get_current_user();
+	$profile_url = get_edit_profile_url($user_id);
+	if (0 != $user_id)
+		{
+		/* Add the "My Account" menu */
+		$avatar = get_avatar($user_id, 28);
+		$howdy = sprintf(__('Welcome Back, %1$s') , $current_user->display_name);
+		$class = empty($avatar) ? '' : 'with-avatar';
+		$wp_admin_bar->add_menu(array(
+			'id' => 'my-account',
+			'parent' => 'top-secondary',
+			'title' => $howdy . $avatar,
+			'href' => $profile_url,
+			'meta' => array(
+				'class' => $class,
+			) ,
+		));
+		}
+	};
 
-if ( 0 != $user_id ) {
-/* Add the "My Account" menu */
-$avatar = get_avatar( $user_id, 28 );
-$howdy = sprintf( __('Welcome Back, %1$s'), $current_user->display_name );
-$class = empty( $avatar ) ? '' : 'with-avatar';
 
-$wp_admin_bar->add_menu( array(
-'id' => 'my-account',
-'parent' => 'top-secondary',
-'title' => $howdy . $avatar,
-'href' => $profile_url,
-'meta' => array(
-'class' => $class,
-),
-) );
-}
-};
-
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Remove admin WordPress logo
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 function site_admin_bar_remove() 
         {       
@@ -134,9 +135,9 @@ add_action('wp_before_admin_bar_render', 'site_admin_bar_remove', 0);
 // Customize WordPress admin
 //======================================================================
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Replace default admin login logo and link
-//----------------------------------------------------- 
+//--------------------------------------------------------------
  
 function custom_loginlogo() {
 	// get logo from theme options ACF
@@ -157,9 +158,9 @@ function custom_loginlogo_url($url) {
 	return '/';
 }
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Replace admin footer text
-//----------------------------------------------------- 
+//--------------------------------------------------------------
 
 function remove_footer_admin () {
 echo 'Fueled by <a href="http://www.wordpress.org" target="_blank">WordPress</a> | Website by <a href="https://sonoradesignworks.com" target="_blank">Sonora DesignWorks</a></p>';
@@ -172,24 +173,24 @@ add_filter('admin_footer_text', 'remove_footer_admin');
 // Disable things not needed for this specific theme
 //======================================================================
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Remove Tags support for Posts
-//----------------------------------------------------- 
+//--------------------------------------------------------------
 
 add_action('init', 'unregister_posts_tag');
 function unregister_posts_tag() {
     unregister_taxonomy_for_object_type('post_tag', 'post');
 }
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Remove Welcome screen from dashboard
-//----------------------------------------------------- 
+//--------------------------------------------------------------
 
 remove_action('welcome_panel', 'wp_welcome_panel');
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Remove Dashboard Widgets
-//----------------------------------------------------- 
+//--------------------------------------------------------------
 
 function remove_dashboard_widgets() {
 	global $wp_meta_boxes;
@@ -207,9 +208,9 @@ function remove_dashboard_widgets() {
 
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Disable default widgets 
-//----------------------------------------------------- 
+//--------------------------------------------------------------
 
 function Wps_unregister_default_widgets() {
     unregister_widget('WP_Widget_Pages');
@@ -227,9 +228,9 @@ function Wps_unregister_default_widgets() {
 }
 add_action('widgets_init', 'Wps_unregister_default_widgets', 1);
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Remove Admin Menus
-//----------------------------------------------------- 
+//--------------------------------------------------------------
 
 add_action('admin_menu', 'remove_menus', 102);
 function remove_menus()
@@ -264,9 +265,9 @@ remove_submenu_page ( 'themes.php', 'theme-editor.php' ); // Appearance-->Editor
 // Shortcodes
 //======================================================================
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Clear line break
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 add_shortcode('break', 'short_break');
 
@@ -279,9 +280,9 @@ return '<br class="clear">';
 // Customize TinyMce editor
 //======================================================================
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Enable font size & font family selects in the editor
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 if ( ! function_exists( 'wpex_mce_buttons' ) ) {
 	function wpex_mce_buttons( $buttons ) {
@@ -292,9 +293,9 @@ if ( ! function_exists( 'wpex_mce_buttons' ) ) {
 }
 add_filter( 'mce_buttons_2', 'wpex_mce_buttons' );
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Set font sizes
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 if ( ! function_exists( 'wpex_mce_text_sizes' ) ) {
 	function wpex_mce_text_sizes( $initArray ){
@@ -304,9 +305,9 @@ if ( ! function_exists( 'wpex_mce_text_sizes' ) ) {
 }
 add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Set fonts
-//-----------------------------------------------------
+//--------------------------------------------------------------
 /*
 if ( ! function_exists( 'wpex_mce_google_fonts_array' ) ) {
 	function wpex_mce_google_fonts_array( $initArray ) {
@@ -321,9 +322,9 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_google_fonts_array' );
 // Gravity Forms
 //======================================================================
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Fix Gravity Form Tabindex Conflicts
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
 function gform_tabindexer( $tab_index, $form = false ) {
@@ -333,15 +334,15 @@ function gform_tabindexer( $tab_index, $form = false ) {
     return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
 }
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Hide labels on Gravity forms when using placeholders
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Stop Gravity Forms jumping on submit
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 // (single form - replace _1 with form ID) add_filter( 'gform_confirmation_anchor_1', '__return_false' );
 // (disable sitewide) add_filter( 'gform_confirmation_anchor', '__return_false' );
@@ -350,15 +351,15 @@ add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 // Advanced Custom Fields
 //======================================================================
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Hide ACF field group menu item
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 //add_filter('acf/settings/show_admin', '__return_false');
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Theme Options
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 if( function_exists('acf_add_options_page') ) {
 	
@@ -418,9 +419,9 @@ function include_file($atts) {
 // Blog Post Types
 //======================================================================
 
-//-----------------------------------------------------
+//--------------------------------------------------------------
 // Add Video post type
-//-----------------------------------------------------
+//--------------------------------------------------------------
 
 add_theme_support( 'post-formats', array( 'video' ) );
 
