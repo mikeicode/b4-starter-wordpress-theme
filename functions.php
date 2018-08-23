@@ -3,39 +3,24 @@
 //======================================================================
 // Imports
 //====================================================================== 
+
 get_template_part( 'inc/custom-fields' );
-
-
 
 //======================================================================
 // Register and Load Scripts and Stylesheets
 //====================================================================== 
 
-function load_scripts()  
-    {  
-         
-        // Register scripts
-		wp_register_script( 'scripts', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery'), '1.0', true);
-		
-        // Enqueue scripts 
-		wp_enqueue_script( 'scripts' );
-		
-    }  
-add_action( 'wp_enqueue_scripts', 'load_scripts' );  
-
-function load_styles()  
-	{
+function add_theme_scripts() {
 	
-		// Register styles
-		wp_register_style( 'output', get_template_directory_uri() . '/css/output.css', array(), '1.0', 'all' );
-	    wp_register_style( 'font-awesome-free', '//use.fontawesome.com/releases/v5.2.0/css/all.css' );
-
-		// Enqueue styles 
-		wp_enqueue_style( 'output' );
-		wp_enqueue_style( 'font-awesome-free' );
+	// Load CSS
+ 	wp_enqueue_style( 'output', get_template_directory_uri() . '/css/output.css', array(), '1.0', 'all' );
+	wp_enqueue_style( 'font-awesome-free', '//use.fontawesome.com/releases/v5.2.0/css/all.css' );
 	
-	}
-add_action( 'wp_enqueue_scripts', 'load_styles' );
+	// Load JS
+	 wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery'), '1.0', true);
+	    
+}
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
 
 //======================================================================
@@ -74,6 +59,7 @@ function my_custom_menus() {
 //-----------------------------------------------------
 
 //widget support for a right sidebar
+/*
 register_sidebar(array(
   'name' => 'Right SideBar',
   'id' => 'right-sidebar',
@@ -83,6 +69,7 @@ register_sidebar(array(
   'before_title' => '<h3>',
   'after_title' => '</h3>'
 ));
+*/
 
 
 //======================================================================
