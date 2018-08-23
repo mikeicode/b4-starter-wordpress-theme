@@ -31,7 +31,7 @@
 			$rightClasses = 'col-md-7';
 		} else {
 			$leftClasses = '';
-			$rightClasses = 'col';
+			$rightClasses = 'col-sm-12';
 		}
 	?>
 
