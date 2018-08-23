@@ -1,6 +1,6 @@
 <?php
  	get_header();
-	get_template_part( 'menu', 'index' ); 
+	get_template_part( 'menu' ); 
 ?>  
     
     <?php while ( have_posts() ) : the_post(); ?><!--  the loop -->

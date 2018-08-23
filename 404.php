@@ -1,6 +1,6 @@
 <?php
 get_header(); 
-get_template_part( 'menu', 'index' ); ?>
+get_template_part( 'menu' );  ?>
 
 	<section class="main-404">
         <div class="container">
