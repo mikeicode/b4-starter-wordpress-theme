@@ -89,13 +89,10 @@ add_filter('widget_text', 'do_shortcode');
 remove_action( 'wp_head', 'wp_generator' );
 
 //--------------------------------------------------------------
-// Change wordpress howdy text
+// Change WordPress howdy text
 //--------------------------------------------------------------
 
-add_action('admin_bar_menu', 'wp_admin_bar_my_custom_account_menu', 11);
-
-function wp_admin_bar_my_custom_account_menu($wp_admin_bar)
-	{
+function wp_admin_bar_change_howdy_text($wp_admin_bar) {
 	$user_id = get_current_user_id();
 	$current_user = wp_get_current_user();
 	$profile_url = get_edit_profile_url($user_id);
@@ -115,19 +112,18 @@ function wp_admin_bar_my_custom_account_menu($wp_admin_bar)
 			) ,
 		));
 		}
-	};
+};
+add_action('admin_bar_menu', 'wp_admin_bar_change_howdy_text', 11);
 
 
 //--------------------------------------------------------------
 // Remove admin WordPress logo
 //--------------------------------------------------------------
 
-function site_admin_bar_remove() 
-        {       
-         global $wp_admin_bar;   
-             /* Remove their stuff */ 
-               $wp_admin_bar->remove_menu('wp-logo');
-        }
+function site_admin_bar_remove() {       
+	global $wp_admin_bar;   
+	$wp_admin_bar->remove_menu('wp-logo');
+}
 add_action('wp_before_admin_bar_render', 'site_admin_bar_remove', 0); 
 
 
@@ -145,27 +141,27 @@ function custom_loginlogo() {
 
 echo '<style>
 .login h1 a {
-		background-image: url('. $admin_screen_login_logo['url'] .') !important;
-		width:320px !important; 
-		height:150px !important;
-		background-size: contain !important; 
-	}
+	background-image: url('. $admin_screen_login_logo['url'] .') !important;
+	width:320px !important; 
+	height:150px !important;
+	background-size: contain !important; 
+}
 </style>';
 }
 add_action('login_head', 'custom_loginlogo');
-add_filter( 'login_headerurl', 'custom_loginlogo_url' );
+
 function custom_loginlogo_url($url) {
 	return '/';
 }
+add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 
 //--------------------------------------------------------------
 // Replace admin footer text
 //--------------------------------------------------------------
 
 function remove_footer_admin () {
-echo 'Fueled by <a href="http://www.wordpress.org" target="_blank">WordPress</a> | Website by <a href="https://sonoradesignworks.com" target="_blank">Sonora DesignWorks</a></p>';
-    }
-
+	echo 'Fueled by <a href="http://www.wordpress.org" target="_blank">WordPress</a> | Website by <a href="https://sonoradesignworks.com" target="_blank">Sonora DesignWorks</a></p>';
+}
 add_filter('admin_footer_text', 'remove_footer_admin'); 
 
 
@@ -177,10 +173,10 @@ add_filter('admin_footer_text', 'remove_footer_admin');
 // Remove Tags support for Posts
 //--------------------------------------------------------------
 
-add_action('init', 'unregister_posts_tag');
 function unregister_posts_tag() {
     unregister_taxonomy_for_object_type('post_tag', 'post');
 }
+add_action('init', 'unregister_posts_tag');
 
 //--------------------------------------------------------------
 // Remove Welcome screen from dashboard
@@ -205,7 +201,6 @@ function remove_dashboard_widgets() {
 	//unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
 
 }
-
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 
 //--------------------------------------------------------------
@@ -232,33 +227,17 @@ add_action('widgets_init', 'Wps_unregister_default_widgets', 1);
 // Remove Admin Menus
 //--------------------------------------------------------------
 
-add_action('admin_menu', 'remove_menus', 102);
-function remove_menus()
-{
-global $submenu;
+function remove_menus() {
+	global $submenu;
 
-//remove_menu_page( 'edit.php' ); // Posts
-//remove_menu_page( 'upload.php' ); // Media
-remove_menu_page( 'link-manager.php' ); // Links
-//remove_menu_page( 'edit-comments.php' ); // Comments
-//remove_menu_page( 'edit.php?post_type=page' ); // Pages
-//remove_menu_page( 'plugins.php' ); // Plugins
-//remove_menu_page( 'themes.php' ); // Appearance
-//remove_menu_page( 'users.php' ); // Users
-//remove_menu_page( 'tools.php' ); // Tools
-//remove_menu_page(‘options-general.php’); // Settings
-
-//remove_submenu_page ( 'index.php', 'update-core.php' );    //Dashboard->Updates
-//remove_submenu_page ( 'themes.php', 'themes.php' ); // Appearance-->Themes
-//remove_submenu_page ( 'themes.php', 'widgets.php' ); // Appearance-->Widgets
-remove_submenu_page ( 'themes.php', 'theme-editor.php' ); // Appearance-->Editor
-//remove_submenu_page ( 'options-general.php', 'options-general.php' ); // Settings->General
-//remove_submenu_page ( 'options-general.php', 'options-writing.php' ); // Settings->writing
-//remove_submenu_page ( 'options-general.php', 'options-reading.php' ); // Settings->Reading
-//remove_submenu_page ( 'options-general.php', 'options-discussion.php' ); // Settings->Discussion
-//remove_submenu_page ( 'options-general.php', 'options-media.php' ); // Settings->Media
-//remove_submenu_page ( 'options-general.php', 'options-privacy.php' ); // Settings->Privacy
+	//remove_menu_page( 'edit.php' ); // Posts
+	remove_menu_page( 'link-manager.php' ); // Links
+	//remove_menu_page( 'edit-comments.php' ); // Comments
+	//remove_submenu_page ( 'themes.php', 'widgets.php' ); // Appearance-->Widgets
+	remove_submenu_page ( 'themes.php', 'theme-editor.php' ); // Appearance-->Editor
+	
 }
+add_action('admin_menu', 'remove_menus', 102);
 
 
 //======================================================================
@@ -272,7 +251,7 @@ remove_submenu_page ( 'themes.php', 'theme-editor.php' ); // Appearance-->Editor
 add_shortcode('break', 'short_break');
 
 function short_break () {
-return '<br class="clear">';
+	return '<br class="clear">';
 }
 
 
@@ -311,7 +290,7 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 /*
 if ( ! function_exists( 'wpex_mce_google_fonts_array' ) ) {
 	function wpex_mce_google_fonts_array( $initArray ) {
-	    $initArray['font_formats'] = 'Arial=arial,helvetica,sans-serif;latohairline=latohairline;latothin=latothin;latolight=latolight;latoregular=latoregular;latomedium=latomedium;latosemibold=latosemibold;latobold=latobold;latoheavy=latoheavy;latoblack=latoblack;';
+	    $initArray['font_formats'] = 'Arial=arial,helvetica,sans-serif;latohairline=latohairline;';
             return $initArray;
 	}
 }
@@ -326,13 +305,13 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_google_fonts_array' );
 // Fix Gravity Form Tabindex Conflicts
 //--------------------------------------------------------------
 
-add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
 function gform_tabindexer( $tab_index, $form = false ) {
-    $starting_index = 1000; // if you need a higher tabindex, update this number
+    $starting_index = 1000; 
     if( $form )
         add_filter( 'gform_tabindex_' . $form['id'], 'gform_tabindexer' );
     return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
 }
+add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
 
 //--------------------------------------------------------------
 // Hide labels on Gravity forms when using placeholders
@@ -358,7 +337,7 @@ add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 //add_filter('acf/settings/show_admin', '__return_false');
 
 //--------------------------------------------------------------
-// Theme Options
+// Theme Options - ACF
 //--------------------------------------------------------------
 
 if( function_exists('acf_add_options_page') ) {
@@ -395,11 +374,11 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'theme-general-settings',
 	));
 	
-			
 }
 
 //======================================================================
-// Include PHP file in Content using [shortcode] 
+// Include PHP file in Content using shortcode, examples:
+// [include slug="form"] [include slug="folder/filename_no_extension"]
 //======================================================================
 
 function include_file($atts) {
