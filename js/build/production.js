@@ -1183,6 +1183,7 @@ jQuery(document).ready(function($) {
 		  $('.matchheight').matchHeight();		  
 	  };
 	
+	
 /*
 |--------------------------------------------------------------------------
 | Zebra stripe for blog
@@ -1194,6 +1195,40 @@ jQuery(document).ready(function($) {
 	
 	  myTheme.Zebra = function () {
 		  $("section.post-wrap:odd").addClass("odd");
+	  };
+	
+	
+/*
+|--------------------------------------------------------------------------
+| toTop button
+|--------------------------------------------------------------------------
+|
+|
+|
+*/	
+	
+	  myTheme.ToTop = function () {
+		  if ($('#to-top').length) {
+				var scrollTrigger = 100, // px
+					backToTop = function () {
+						var scrollTop = $(window).scrollTop();
+						if (scrollTop > scrollTrigger) {
+							$('#to-top').addClass('show');
+						} else {
+							$('#to-top').removeClass('show');
+						}
+					};
+				backToTop();
+				$(window).on('scroll', function () {
+					backToTop();
+				});
+				$('#to-top').on('click', function (e) {
+					e.preventDefault();
+					$('html,body').animate({
+						scrollTop: 0
+					}, 700);
+				});
+			}
 	  };
 	
 
@@ -1215,6 +1250,7 @@ jQuery(document).ready(function($) {
 	myTheme.Isotope2();
 	myTheme.Matchheight();
 	myTheme.Zebra();
+	myTheme.ToTop();
 	
 	
 
