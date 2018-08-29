@@ -8257,20 +8257,16 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /* -----------------------------[ Inputs ]----------------------------- */
-input[type="text"], input[type="password"], input[type="email"], textarea, select {
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], textarea, select {
   border: 1px solid #ccc;
-  padding: 6px 4px;
+  padding: 6px;
   outline: none;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px; }
+  border-radius: 2px;
+  -webkit-appearance: none; }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
   border: 1px solid #aaa;
   color: #444; }
-
-input[type="text"], input[type="password"], input[type="email"], textarea {
-  -webkit-appearance: none; }
 
 /* full opacity placeholder */
 ::-webkit-input-placeholder {
@@ -8467,6 +8463,11 @@ h3#reply-title, h2#comments-title {
 
 .form-submit input#submit {
   padding: 12px 25px 7px 25px; }
+
+#commentform .comment-form-author label,
+#commentform .comment-form-email label, #commentform .comment-form-author label,
+#commentform .comment-form-email label {
+  min-width: 60px; }
 
 a.button, button, input[type="submit"], input[type="reset"], input[type="button"],
 a.button:visited, button:visited, input[type="submit"]:visited, input[type="reset"]:visited, input[type="button"]:visited {

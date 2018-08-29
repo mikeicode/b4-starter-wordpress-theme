@@ -131,3 +131,9 @@ h3#reply-title, h2#comments-title {
 	padding:12px 25px 7px 25px;
 }
 
+#commentform , #commentform  {
+	.comment-form-author label,
+	.comment-form-email label {
+		min-width:60px;
+	}
+}
