@@ -254,6 +254,36 @@ function short_break () {
 	return '<br class="clear">';
 }
 
+//--------------------------------------------------------------
+// Stripe
+//--------------------------------------------------------------
+
+add_shortcode('stripe', 'short_stripe');
+
+function short_stripe () {
+	return '<div class="stripe"><hr></div>';
+}
+
+//--------------------------------------------------------------
+// Link shortcode [button link="#"]Text[/button]
+//--------------------------------------------------------------
+
+function buttonShort($atts, $content = null) {
+   extract(shortcode_atts(array('link' => '#'), $atts));
+   return '<a class="button" href="'.$link.'">' . do_shortcode($content) . '</a>';
+}
+add_shortcode('button', 'buttonShort');
+
+//--------------------------------------------------------------
+// FA icon shortcode [icon link="#"]fas fa-map-marker-alt[/icon]
+//--------------------------------------------------------------
+
+function iconShort($atts, $content = null) {
+   extract(shortcode_atts(array('link' => '#'), $atts));
+   return '<a class="icon-link" href="'.$link.'"><i class="' . do_shortcode($content) . '"></i></a>';
+}
+add_shortcode('icon', 'iconShort');
+
 
 //======================================================================
 // Customize TinyMce editor
